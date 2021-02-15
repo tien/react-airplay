@@ -5,17 +5,7 @@ Airplay bridge for React Native
 ## Installation
 
 ```sh
-npm install react-airplay
-```
-
-## Usage
-
-```js
-import ReactAirplay from "react-airplay";
-
-// ...
-
-const result = await ReactAirplay.multiply(3, 7);
+yarn add react-airplay
 ```
 
 ## Contributing
