@@ -1,26 +1,55 @@
-import * as React from 'react';
+import React from 'react';
+import {
+  AirplayButton,
+  useAirplayConnectivity,
+  useExternalPlaybackAvailability,
+} from 'react-airplay';
+import { StyleSheet, Text, View } from 'react-native';
+import Video from 'react-native-video';
 
-import { StyleSheet, View } from 'react-native';
-import ReactAirplayViewManager from 'react-airplay';
+export default () => {
+  const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
 
+  const isAirplayConnected = useAirplayConnectivity();
 
-export default function App() {
   return (
     <View style={styles.container}>
-      <ReactAirplayViewManager color="#32a852" style={styles.box} />
+      <Video
+        source={{
+          uri:
+            'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+        }}
+        style={styles.video}
+        controls={true}
+      />
+      <View>
+        <Text>
+          External playback available: {String(isExternalPlaybackAvailable)}
+        </Text>
+        <Text>Airplay connected: {String(isAirplayConnected)}</Text>
+      </View>
+      <View style={styles.box}>
+        <AirplayButton
+          style={styles.box}
+          prioritizesVideoDevices={true}
+          tintColor={'yellow'}
+          activeTintColor={'blue'}
+        />
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  video: { flex: 1 },
   box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    flex: 1,
+  },
+  button: {
+    width: '100%',
+    height: '100%',
   },
 });

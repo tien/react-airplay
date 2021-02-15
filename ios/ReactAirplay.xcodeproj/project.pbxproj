@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* ReactAirplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* ReactAirplay.m */; };
-		F4FF95D7245B92E800C19C63 /*  ReactAirplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  ReactAirplay.swift */; };
-
+		A0F1F486DD87A899F9F6DF62 /* libPods-ReactAirplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E290EC26D8F9C938F44F50E9 /* libPods-ReactAirplay.a */; };
+		F4FF95D7245B92E800C19C63 /* ReactAirplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* ReactAirplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +25,14 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libReactAirplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactAirplay.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
+		31BAB43FAD5565C60560F4DC /* Pods-ReactAirplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactAirplay.debug.xcconfig"; path = "Target Support Files/Pods-ReactAirplay/Pods-ReactAirplay.debug.xcconfig"; sourceTree = "<group>"; };
+		69983146D0EE5FCC3E26F024 /* Pods-ReactAirplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactAirplay.release.xcconfig"; path = "Target Support Files/Pods-ReactAirplay/Pods-ReactAirplay.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* ReactAirplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactAirplay.m; sourceTree = "<group>"; };
+		E250438425D9C78A00CB870C /* ReactAirplayButtonViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactAirplayButtonViewManager.m; sourceTree = "<group>"; };
+		E250438525D9C78A00CB870C /* ReactAirplayButtonViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactAirplayButtonViewManager.swift; sourceTree = "<group>"; };
+		E290EC26D8F9C938F44F50E9 /* libPods-ReactAirplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactAirplay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FF95D5245B92E700C19C63 /* ReactAirplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactAirplay-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* ReactAirplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactAirplay.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F1F486DD87A899F9F6DF62 /* libPods-ReactAirplay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,16 +55,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2DEF70C9DA0040849B61EB8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E290EC26D8F9C938F44F50E9 /* libPods-ReactAirplay.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
+				E250438425D9C78A00CB870C /* ReactAirplayButtonViewManager.m */,
+				E250438525D9C78A00CB870C /* ReactAirplayButtonViewManager.swift */,
 				F4FF95D6245B92E800C19C63 /* ReactAirplay.swift */,
 				B3E7B5891CC2AC0600A0062D /* ReactAirplay.m */,
 				F4FF95D5245B92E700C19C63 /* ReactAirplay-Bridging-Header.h */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
+				C4768C40F0DA143C73316BE6 /* Pods */,
+				2DEF70C9DA0040849B61EB8B /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		C4768C40F0DA143C73316BE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31BAB43FAD5565C60560F4DC /* Pods-ReactAirplay.debug.xcconfig */,
+				69983146D0EE5FCC3E26F024 /* Pods-ReactAirplay.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "ReactAirplay" */;
 			buildPhases = (
+				27016C3E32FF1B36948EDD7A /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -117,15 +140,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27016C3E32FF1B36948EDD7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactAirplay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				F4FF95D7245B92E800C19C63 /* ReactAirplay.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* ReactAirplay.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +272,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31BAB43FAD5565C60560F4DC /* Pods-ReactAirplay.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -238,16 +284,15 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ReactAirplay;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactAirplay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69983146D0EE5FCC3E26F024 /* Pods-ReactAirplay.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -259,10 +304,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ReactAirplay;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactAirplay-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};
