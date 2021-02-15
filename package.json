@@ -4,7 +4,7 @@
   "description": "Airplay bridge for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
-  "types": "lib/typescript/src/index.d.ts",
+  "types": "lib/typescript/index.d.ts",
   "react-native": "src/index",
   "source": "src/index",
   "files": [
@@ -34,7 +34,8 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "airplay",
+    "cast"
   ],
   "repository": "https://github.com/tien/react-airplay",
   "author": "Tien Nguyen Khac <tiennguyenkhac1702@gmail.com> (https://github.com/tien)",
