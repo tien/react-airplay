@@ -67,12 +67,16 @@ class ReactAirplay: RCTEventEmitter {
     
     override func constantsToExport() -> [AnyHashable : Any]! {
         return [
-            "EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED": ReactAirplayEvent.externalPlaybackAvailabilityChanged,
-            "AIRPLAY_CONNECTIVITY_CHANGED": ReactAirplayEvent.airplayConnectivityChanged
+            "EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED": ReactAirplayEvent.externalPlaybackAvailabilityChanged.rawValue,
+            "AIRPLAY_CONNECTIVITY_CHANGED": ReactAirplayEvent.airplayConnectivityChanged.rawValue
         ]
     }
     
     override func supportedEvents() -> [String]! {
         return ReactAirplayEvent.allCases.map { $0.rawValue }
+    }
+    
+    override class func requiresMainQueueSetup() -> Bool {
+        return false
     }
 }
