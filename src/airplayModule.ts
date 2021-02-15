@@ -13,10 +13,22 @@ export const AirplayListener = new NativeEventEmitter(ReactAirplay);
 
 export const onExternalPlaybackAvailabilityChanged = (
   callback: (availability: boolean) => void
-) =>
-  AirplayListener.addListener(EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED, callback)
-    .remove;
+) => {
+  const listener = AirplayListener.addListener(
+    EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,
+    callback
+  );
+
+  return listener.remove.bind(listener);
+};
 
 export const onAirplayConnectivityChanged = (
   callback: (connected: boolean) => void
-) => AirplayListener.addListener(AIRPLAY_CONNECTIVITY_CHANGED, callback).remove;
+) => {
+  const listener = AirplayListener.addListener(
+    AIRPLAY_CONNECTIVITY_CHANGED,
+    callback
+  );
+
+  return listener.remove.bind(listener);
+};
