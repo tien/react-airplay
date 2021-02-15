@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  ColorValue,
   processColor,
+  ProcessedColorValue,
   requireNativeComponent,
   ViewProps,
   ViewPropsIOS,
@@ -8,8 +10,8 @@ import {
 
 type NativeAirplayButtonProps = ViewPropsIOS &
   ViewProps & {
-    tintColor?: number;
-    activeTintColor?: number;
+    tintColor?: ProcessedColorValue | null;
+    activeTintColor?: ProcessedColorValue | null;
     prioritizesVideoDevices?: boolean;
   };
 
@@ -17,14 +19,9 @@ export type AirplayButtonProps = Omit<
   NativeAirplayButtonProps,
   'tintColor' | 'activeTintColor'
 > & {
-  tintColor?: string;
-  activeTintColor?: string;
+  tintColor?: number | ColorValue;
+  activeTintColor?: number | ColorValue;
 };
-
-const processOptionalColor = (colorString?: string | null) =>
-  colorString === undefined || colorString === null
-    ? undefined
-    : processColor(colorString);
 
 const NativeAirplayButton = requireNativeComponent<NativeAirplayButtonProps>(
   'ReactAirplayButtonView'
@@ -37,7 +34,7 @@ export const AirplayButton = ({
 }: AirplayButtonProps) => (
   <NativeAirplayButton
     {...props}
-    tintColor={processOptionalColor(tintColor)}
-    activeTintColor={processOptionalColor(activeTintColor)}
+    tintColor={processColor(tintColor)}
+    activeTintColor={processColor(activeTintColor)}
   />
 );
