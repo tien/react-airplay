@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A0F1F486DD87A899F9F6DF62 /* libPods-ReactAirplay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E290EC26D8F9C938F44F50E9 /* libPods-ReactAirplay.a */; };
-		F4FF95D7245B92E800C19C63 /* ReactAirplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* ReactAirplay.swift */; };
+		E205E8D425DC5CF400BE02C0 /* RAExternalPlaybackAvailabilityContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E205E8D325DC5CF400BE02C0 /* RAExternalPlaybackAvailabilityContext.m */; };
+		E205E8D725DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E205E8D625DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift */; };
+		E205E8DB25DC611800BE02C0 /* RAAirplayConnectivityContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E205E8DA25DC611800BE02C0 /* RAAirplayConnectivityContext.m */; };
+		E205E8E125DC648F00BE02C0 /* RAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E205E8E025DC648F00BE02C0 /* RAEvent.m */; };
+		E205E8EC25DC676800BE02C0 /* RAAirplayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E205E8EB25DC676800BE02C0 /* RAAirplayButtonView.swift */; };
+		E28F4EB125DBD3AB00DECA36 /* RAEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */; };
+		E28F4EB325DBD3AE00DECA36 /* RAAirplayButtonViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E250438425D9C78A00CB870C /* RAAirplayButtonViewManager.m */; };
+		E28F4EB525DBD3B100DECA36 /* RAAirplayButtonViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E250438525D9C78A00CB870C /* RAAirplayButtonViewManager.swift */; };
+		E28F4EBC25DBD65600DECA36 /* RAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F4EBB25DBD65600DECA36 /* RAEvent.swift */; };
+		E28F4EBF25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F4EBE25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,12 +36,18 @@
 		134814201AA4EA6300B7C361 /* libReactAirplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactAirplay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BAB43FAD5565C60560F4DC /* Pods-ReactAirplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactAirplay.debug.xcconfig"; path = "Target Support Files/Pods-ReactAirplay/Pods-ReactAirplay.debug.xcconfig"; sourceTree = "<group>"; };
 		69983146D0EE5FCC3E26F024 /* Pods-ReactAirplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactAirplay.release.xcconfig"; path = "Target Support Files/Pods-ReactAirplay/Pods-ReactAirplay.release.xcconfig"; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* ReactAirplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactAirplay.m; sourceTree = "<group>"; };
-		E250438425D9C78A00CB870C /* ReactAirplayButtonViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactAirplayButtonViewManager.m; sourceTree = "<group>"; };
-		E250438525D9C78A00CB870C /* ReactAirplayButtonViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactAirplayButtonViewManager.swift; sourceTree = "<group>"; };
+		E205E8D325DC5CF400BE02C0 /* RAExternalPlaybackAvailabilityContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAExternalPlaybackAvailabilityContext.m; sourceTree = "<group>"; };
+		E205E8D625DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAirplayConnectivityContext.swift; sourceTree = "<group>"; };
+		E205E8DA25DC611800BE02C0 /* RAAirplayConnectivityContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAAirplayConnectivityContext.m; sourceTree = "<group>"; };
+		E205E8E025DC648F00BE02C0 /* RAEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAEvent.m; sourceTree = "<group>"; };
+		E205E8EB25DC676800BE02C0 /* RAAirplayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAirplayButtonView.swift; sourceTree = "<group>"; };
+		E250438425D9C78A00CB870C /* RAAirplayButtonViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAAirplayButtonViewManager.m; sourceTree = "<group>"; };
+		E250438525D9C78A00CB870C /* RAAirplayButtonViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAirplayButtonViewManager.swift; sourceTree = "<group>"; };
+		E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAEventEmitter.swift; sourceTree = "<group>"; };
+		E28F4EBB25DBD65600DECA36 /* RAEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAEvent.swift; sourceTree = "<group>"; };
+		E28F4EBE25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAExternalPlaybackAvailabilityContext.swift; sourceTree = "<group>"; };
 		E290EC26D8F9C938F44F50E9 /* libPods-ReactAirplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactAirplay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FF95D5245B92E700C19C63 /* ReactAirplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactAirplay-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* ReactAirplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactAirplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +81,9 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				E250438425D9C78A00CB870C /* ReactAirplayButtonViewManager.m */,
-				E250438525D9C78A00CB870C /* ReactAirplayButtonViewManager.swift */,
-				F4FF95D6245B92E800C19C63 /* ReactAirplay.swift */,
-				B3E7B5891CC2AC0600A0062D /* ReactAirplay.m */,
+				E205E8E925DC65EF00BE02C0 /* types */,
+				E205E8E825DC65D000BE02C0 /* modules */,
+				E205E8E725DC65B500BE02C0 /* views */,
 				F4FF95D5245B92E700C19C63 /* ReactAirplay-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				C4768C40F0DA143C73316BE6 /* Pods */,
@@ -83,8 +97,38 @@
 				31BAB43FAD5565C60560F4DC /* Pods-ReactAirplay.debug.xcconfig */,
 				69983146D0EE5FCC3E26F024 /* Pods-ReactAirplay.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E205E8E725DC65B500BE02C0 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E250438525D9C78A00CB870C /* RAAirplayButtonViewManager.swift */,
+				E250438425D9C78A00CB870C /* RAAirplayButtonViewManager.m */,
+				E205E8EB25DC676800BE02C0 /* RAAirplayButtonView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		E205E8E825DC65D000BE02C0 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */,
+				E205E8D625DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift */,
+				E205E8DA25DC611800BE02C0 /* RAAirplayConnectivityContext.m */,
+				E28F4EBE25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift */,
+				E205E8D325DC5CF400BE02C0 /* RAExternalPlaybackAvailabilityContext.m */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		E205E8E925DC65EF00BE02C0 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				E28F4EBB25DBD65600DECA36 /* RAEvent.swift */,
+				E205E8E025DC648F00BE02C0 /* RAEvent.m */,
+			);
+			path = types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF95D7245B92E800C19C63 /* ReactAirplay.swift in Sources */,
+				E205E8D425DC5CF400BE02C0 /* RAExternalPlaybackAvailabilityContext.m in Sources */,
+				E205E8D725DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift in Sources */,
+				E28F4EBF25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift in Sources */,
+				E28F4EB125DBD3AB00DECA36 /* RAEventEmitter.swift in Sources */,
+				E205E8E125DC648F00BE02C0 /* RAEvent.m in Sources */,
+				E28F4EB325DBD3AE00DECA36 /* RAAirplayButtonViewManager.m in Sources */,
+				E205E8DB25DC611800BE02C0 /* RAAirplayConnectivityContext.m in Sources */,
+				E28F4EB525DBD3B100DECA36 /* RAAirplayButtonViewManager.swift in Sources */,
+				E205E8EC25DC676800BE02C0 /* RAAirplayButtonView.swift in Sources */,
+				E28F4EBC25DBD65600DECA36 /* RAEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

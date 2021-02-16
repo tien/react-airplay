@@ -1,28 +1,45 @@
-import { DependencyList, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
+  AirplayConnectivityContext,
+  ExternalPlaybackAvailabilityContext,
   onAirplayConnectivityChanged,
   onExternalPlaybackAvailabilityChanged,
 } from './airplayModule';
 
-export const useExternalPlaybackAvailability = (deps: DependencyList = []) => {
+export const useExternalPlaybackAvailability = () => {
   const [
     isExternalPlaybackAvailable,
     setIsExternalPlaybackAvailable,
   ] = useState(false);
 
-  useEffect(
-    () => onExternalPlaybackAvailabilityChanged(setIsExternalPlaybackAvailable),
-    deps
-  );
+  useEffect(() => {
+    const subscriptionPromise = ExternalPlaybackAvailabilityContext.fetchExternalPlaybackAvailability()
+      .then(setIsExternalPlaybackAvailable)
+      .then(() =>
+        onExternalPlaybackAvailabilityChanged(setIsExternalPlaybackAvailable)
+      );
+
+    return () => {
+      subscriptionPromise.then((subscription) => subscription.remove());
+    };
+  }, []);
 
   return isExternalPlaybackAvailable;
 };
 
-export const useAirplayConnectivity = (deps: DependencyList = []) => {
+export const useAirplayConnectivity = () => {
   const [isAirplayConnected, setIsAirplayConnected] = useState(false);
 
-  useEffect(() => onAirplayConnectivityChanged(setIsAirplayConnected), deps);
+  useEffect(() => {
+    const subscriptionPromise = AirplayConnectivityContext.fetchAirplayConnectivity()
+      .then(setIsAirplayConnected)
+      .then(() => onAirplayConnectivityChanged(setIsAirplayConnected));
+
+    return () => {
+      subscriptionPromise.then((subscription) => subscription.remove());
+    };
+  }, []);
 
   return isAirplayConnected;
 };

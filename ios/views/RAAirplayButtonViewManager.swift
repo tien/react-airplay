@@ -1,0 +1,9 @@
+import AVKit
+
+@available(iOS 11.0, *)
+@objc(RAAirplayButtonViewManager)
+class RAAirplayButtonViewManager: RCTViewManager {
+    override func view() -> (RAAirplayButtonView) {
+        return RAAirplayButtonView()
+    }
+}

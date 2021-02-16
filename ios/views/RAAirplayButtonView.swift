@@ -1,15 +1,7 @@
 import AVKit
 
 @available(iOS 11.0, *)
-@objc(ReactAirplayButtonViewManager)
-class ReactAirplayButtonViewManager: RCTViewManager {
-    override func view() -> (ReactAirplayButtonView) {
-        return ReactAirplayButtonView()
-    }
-}
-
-@available(iOS 11.0, *)
-class ReactAirplayButtonView : AVRoutePickerView {
+class RAAirplayButtonView: AVRoutePickerView {
     @objc override var tintColor: UIColor! {
         get { return super.tintColor }
         set { super.tintColor = newValue }

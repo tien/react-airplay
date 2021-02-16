@@ -1,34 +1,49 @@
 import { NativeEventEmitter, NativeModules } from 'react-native';
 
-const { ReactAirplay } = NativeModules;
+export type ExternalPlaybackAvailabilityContext = {
+  fetchExternalPlaybackAvailability: () => Promise<boolean>;
+};
 
-const constants = ReactAirplay.getConstants() as Record<string, string>;
+export type AirplayConnectivityContext = {
+  fetchAirplayConnectivity: () => Promise<boolean>;
+};
+
+const {
+  RAEvents,
+  RAAirplayConnectivityContext,
+  RAExternalPlaybackAvailabilityContext,
+} = NativeModules;
+
+const constants = RAEvents.getConstants() as Record<string, string>;
+
+export const ExternalPlaybackAvailabilityContext = RAExternalPlaybackAvailabilityContext as ExternalPlaybackAvailabilityContext;
+export const AirplayConnectivityContext = RAAirplayConnectivityContext as AirplayConnectivityContext;
 
 export const {
   EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,
   AIRPLAY_CONNECTIVITY_CHANGED,
 } = constants;
 
-export const AirplayListener = new NativeEventEmitter(ReactAirplay);
+export const ExternalPlaybackAvailabilityEventEmitter = new NativeEventEmitter(
+  RAExternalPlaybackAvailabilityContext
+);
+
+export const AirplayConnectivityEventEmitter = new NativeEventEmitter(
+  RAAirplayConnectivityContext
+);
 
 export const onExternalPlaybackAvailabilityChanged = (
   callback: (availability: boolean) => void
-) => {
-  const listener = AirplayListener.addListener(
+) =>
+  ExternalPlaybackAvailabilityEventEmitter.addListener(
     EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,
     callback
   );
 
-  return listener.remove.bind(listener);
-};
-
 export const onAirplayConnectivityChanged = (
   callback: (connected: boolean) => void
-) => {
-  const listener = AirplayListener.addListener(
+) =>
+  AirplayConnectivityEventEmitter.addListener(
     AIRPLAY_CONNECTIVITY_CHANGED,
     callback
   );
-
-  return listener.remove.bind(listener);
-};
