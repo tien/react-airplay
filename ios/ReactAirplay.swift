@@ -8,10 +8,13 @@ class ReactAirplay: RCTEventEmitter {
         case airplayConnectivityChanged
     }
     
+    private var hasListeners = false
+    
     private var avPlayer = AVPlayer()
     private var avRouteDetector = AVRouteDetector()
     
     override func startObserving() {
+        self.hasListeners = true
         self.avRouteDetector.isRouteDetectionEnabled = true
         
         // MARK: Initial events
@@ -31,30 +34,23 @@ class ReactAirplay: RCTEventEmitter {
         NotificationCenter
             .default
             .addObserver(self,
-                         selector: #selector(handleRouteChange(notification:)),
+                         selector: #selector(checkAirplayConnectivity),
                          name: AVAudioSession.routeChangeNotification,
                          object: nil)
     }
     
     override func stopObserving() {
+        self.hasListeners = false
         self.avRouteDetector.isRouteDetectionEnabled = false
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc private func handleRouteChange(notification: Notification) {
-        guard let userInfo = notification.userInfo,
-              let reasonValue = userInfo[AVAudioSessionRouteChangeReasonKey] as? UInt,
-              let reason = AVAudioSession.RouteChangeReason(rawValue: reasonValue) else {
-            return
-        }
-        
-        switch reason {
-        case .categoryChange: self.checkAirplayConnectivity()
-        default: ()
-        }
+    override func sendEvent(withName name: String!, body: Any!) {
+        guard hasListeners else { return }
+        super.sendEvent(withName: name, body: body)
     }
     
-    private func checkAirplayConnectivity() {
+    @objc private func checkAirplayConnectivity() {
         let session = AVAudioSession.sharedInstance()
         let airplayConnected = session.currentRoute.outputs.contains { $0.portType == .airPlay }
         
