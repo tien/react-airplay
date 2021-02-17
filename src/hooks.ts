@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 
 import {
   AirplayConnectivityContext,
@@ -14,15 +15,17 @@ export const useExternalPlaybackAvailability = () => {
   ] = useState(false);
 
   useEffect(() => {
-    const subscriptionPromise = ExternalPlaybackAvailabilityContext.fetchExternalPlaybackAvailability()
-      .then(setIsExternalPlaybackAvailable)
-      .then(() =>
-        onExternalPlaybackAvailabilityChanged(setIsExternalPlaybackAvailable)
-      );
+    if (Platform.OS !== 'ios') return;
 
-    return () => {
-      subscriptionPromise.then((subscription) => subscription.remove());
-    };
+    const subscription = onExternalPlaybackAvailabilityChanged(
+      setIsExternalPlaybackAvailable
+    );
+
+    ExternalPlaybackAvailabilityContext.fetchExternalPlaybackAvailability().then(
+      setIsExternalPlaybackAvailable
+    );
+
+    return subscription.remove.bind(subscription);
   }, []);
 
   return isExternalPlaybackAvailable;
@@ -32,13 +35,15 @@ export const useAirplayConnectivity = () => {
   const [isAirplayConnected, setIsAirplayConnected] = useState(false);
 
   useEffect(() => {
-    const subscriptionPromise = AirplayConnectivityContext.fetchAirplayConnectivity()
-      .then(setIsAirplayConnected)
-      .then(() => onAirplayConnectivityChanged(setIsAirplayConnected));
+    if (Platform.OS !== 'ios') return;
 
-    return () => {
-      subscriptionPromise.then((subscription) => subscription.remove());
-    };
+    const subscription = onAirplayConnectivityChanged(setIsAirplayConnected);
+
+    AirplayConnectivityContext.fetchAirplayConnectivity().then(
+      setIsAirplayConnected
+    );
+
+    return subscription.remove.bind(subscription);
   }, []);
 
   return isAirplayConnected;
