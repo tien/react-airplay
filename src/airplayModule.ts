@@ -1,4 +1,4 @@
-import { NativeEventEmitter, NativeModules } from 'react-native';
+import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
 
 export type ExternalPlaybackAvailabilityContext = {
   fetchExternalPlaybackAvailability: () => Promise<boolean>;
@@ -14,7 +14,10 @@ const {
   RAExternalPlaybackAvailabilityContext,
 } = NativeModules;
 
-const constants = RAEvents.getConstants() as Record<string, string>;
+const constants =
+  Platform.OS !== 'ios'
+    ? {}
+    : (RAEvents.getConstants() as Record<string, string>);
 
 export const ExternalPlaybackAvailabilityContext = RAExternalPlaybackAvailabilityContext as ExternalPlaybackAvailabilityContext;
 export const AirplayConnectivityContext = RAAirplayConnectivityContext as AirplayConnectivityContext;
