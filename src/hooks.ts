@@ -8,14 +8,20 @@ import {
   onExternalPlaybackAvailabilityChanged,
 } from './airplayModule';
 
-export const useExternalPlaybackAvailability = () => {
+export type UseExternalPlaybackAvailabilityOptions = {
+  useCachedValue?: boolean;
+};
+
+export const useExternalPlaybackAvailability = (
+  options?: UseExternalPlaybackAvailabilityOptions
+) => {
   const [
     isExternalPlaybackAvailable,
     setIsExternalPlaybackAvailable,
   ] = useState(false);
 
   useEffect(() => {
-    if (Platform.OS !== 'ios') return;
+    if (Platform.OS !== 'ios' || (options?.useCachedValue ?? false)) return;
 
     const subscription = onExternalPlaybackAvailabilityChanged(
       setIsExternalPlaybackAvailable
@@ -26,7 +32,7 @@ export const useExternalPlaybackAvailability = () => {
     );
 
     return subscription.remove.bind(subscription);
-  }, []);
+  }, [options?.useCachedValue ?? false]);
 
   return isExternalPlaybackAvailable;
 };

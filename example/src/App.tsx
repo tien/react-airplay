@@ -8,7 +8,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import Video from 'react-native-video';
 
 export default () => {
-  const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
+  const isExternalPlaybackAvailable = useExternalPlaybackAvailability({
+    useCachedValue: false,
+  });
   const isAirplayConnected = useAirplayConnectivity();
 
   return (
