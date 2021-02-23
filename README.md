@@ -18,7 +18,6 @@ import {
 } from 'react-airplay';
 
 const App = () => {
-  // with hooks
   const isAirplayConnected = useAirplayConnectivity();
   const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
 
