@@ -1,5 +1,7 @@
 # react-airplay
 
+[![npm](https://img.shields.io/npm/v/react-airplay)](https://www.npmjs.com/package/react-airplay)
+
 Airplay bridge for React Native.
 
 ## Installation
