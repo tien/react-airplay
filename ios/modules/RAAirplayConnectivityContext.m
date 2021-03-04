@@ -3,6 +3,6 @@
 
 @interface RCT_EXTERN_MODULE(RAAirplayConnectivityContext, RCTEventEmitter)
 
-RCT_EXTERN_METHOD(fetchAirplayConnectivity: (RCTPromiseResolveBlock)resolve withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(fetchAirplayConnectivity:(RCTPromiseResolveBlock)resolve withRejecter:(RCTPromiseRejectBlock)reject)
 
 @end
