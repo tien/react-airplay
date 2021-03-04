@@ -27,7 +27,7 @@ class RAAirplayConnectivityContext: RAEventEmitter {
     }
     
     @objc(fetchAirplayConnectivity:withRejecter:)
-    func fetchAirplayConnectivity(_ resolve: RCTPromiseResolveBlock, withRejecter reject: RCTPromiseRejectBlock) -> Void {
+    func fetchAirplayConnectivity(_ resolve: RCTPromiseResolveBlock, withRejecter reject: RCTPromiseRejectBlock) {
         resolve(self.getAirplayConnectivity())
     }
     
