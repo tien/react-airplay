@@ -12,7 +12,7 @@ yarn add react-airplay
 
 ## Usage
 
-```typescript
+```tsx
 import {
   AirplayButton,
   useAirplayConnectivity,
@@ -30,6 +30,10 @@ const App = () => {
           prioritizesVideoDevices={true}
           tintColor={'red'}
           activeTintColor={'blue'}
+          style={{
+            width: 24,
+            height: 24,
+          }}
         />
       )}
     </View>
