@@ -28,9 +28,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "pods": "cd ios && pod-install --quiet && cd ../example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "pods": "pod-install --quiet && cd example && pod-install --quiet"
   },
   "keywords": [
     "react-native",
@@ -59,7 +57,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
-    "pod-install": "^0.1.0",
+    "pod-install": "^0.1.21",
     "prettier": "^2.0.5",
     "react": "16.13.1",
     "react-native": "0.63.4",
