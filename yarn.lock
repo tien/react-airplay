@@ -2413,7 +2413,7 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
 
-chalk@4.1.1, chalk@^4.0.0, chalk@^4.1.0:
+chalk@4.1.1, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
   dependencies:
@@ -4298,18 +4298,19 @@ ini@^1.3.2, ini@~1.3.0:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
 
-inquirer@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.0.0.tgz#957a46db1abcf0fdd2ab82deb7470e90afc7d0ac"
+inquirer@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.1.0.tgz#68ce5ce5376cf0e89765c993d8b7c1e62e184d69"
   dependencies:
     ansi-escapes "^4.2.1"
-    chalk "^4.1.0"
+    chalk "^4.1.1"
     cli-cursor "^3.1.0"
     cli-width "^3.0.0"
     external-editor "^3.0.3"
     figures "^3.0.0"
     lodash "^4.17.21"
     mute-stream "0.0.8"
+    ora "^5.3.0"
     run-async "^2.4.0"
     rxjs "^6.6.6"
     string-width "^4.1.0"
@@ -6183,7 +6184,7 @@ options@>=0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/options/-/options-0.0.6.tgz#ec22d312806bb53e731773e7cdaefcf1c643128f"
 
-ora@5.4.0:
+ora@5.4.0, ora@^5.3.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/ora/-/ora-5.4.0.tgz#42eda4855835b9cd14d33864c97a3c95a3f56bf4"
   dependencies:
@@ -6900,8 +6901,8 @@ regjsparser@^0.6.4:
     jsesc "~0.5.0"
 
 release-it@^14.2.2:
-  version "14.6.2"
-  resolved "https://registry.yarnpkg.com/release-it/-/release-it-14.6.2.tgz#dc5389c83d39a9a773968a03db5a0216c736102a"
+  version "14.7.0"
+  resolved "https://registry.yarnpkg.com/release-it/-/release-it-14.7.0.tgz#57c63bee1ea668e5186f7fd018d88fbd01120ada"
   dependencies:
     "@iarna/toml" "2.2.5"
     "@octokit/rest" "18.5.3"
@@ -6917,7 +6918,7 @@ release-it@^14.2.2:
     globby "11.0.3"
     got "11.8.2"
     import-cwd "3.0.0"
-    inquirer "8.0.0"
+    inquirer "8.1.0"
     is-ci "3.0.0"
     lodash "4.17.21"
     mime-types "2.1.30"
