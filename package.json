@@ -26,7 +26,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
+    "prepare": "husky install && bob build",
     "release": "release-it",
     "pods": "pod-install --quiet && cd example && pod-install --quiet"
   },
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
-    "@release-it/conventional-changelog": "^2.0.0",
+    "@release-it/conventional-changelog": "^3.0.1",
     "@types/jest": "^26.0.0",
     "@types/react": "^17.0.5",
     "@types/react-native": "0.64.6",
@@ -75,11 +75,6 @@
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn typescript"
-    }
   },
   "release-it": {
     "git": {
