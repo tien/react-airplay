@@ -17,8 +17,7 @@ export default () => {
     <View style={styles.container}>
       <Video
         source={{
-          uri:
-            'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+          uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
         }}
         style={styles.video}
         controls={true}

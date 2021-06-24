@@ -15,10 +15,8 @@ export type UseExternalPlaybackAvailabilityOptions = {
 export const useExternalPlaybackAvailability = (
   options?: UseExternalPlaybackAvailabilityOptions
 ) => {
-  const [
-    isExternalPlaybackAvailable,
-    setIsExternalPlaybackAvailable,
-  ] = useState(false);
+  const [isExternalPlaybackAvailable, setIsExternalPlaybackAvailable] =
+    useState(false);
 
   useEffect(() => {
     if (Platform.OS !== 'ios' || (options?.useCachedValue ?? false)) return;

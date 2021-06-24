@@ -19,8 +19,10 @@ const constants =
     ? {}
     : (RAEvents.getConstants() as Record<string, string>);
 
-export const ExternalPlaybackAvailabilityContext = RAExternalPlaybackAvailabilityContext as ExternalPlaybackAvailabilityContext;
-export const AirplayConnectivityContext = RAAirplayConnectivityContext as AirplayConnectivityContext;
+export const ExternalPlaybackAvailabilityContext =
+  RAExternalPlaybackAvailabilityContext as ExternalPlaybackAvailabilityContext;
+export const AirplayConnectivityContext =
+  RAAirplayConnectivityContext as AirplayConnectivityContext;
 
 export const {
   EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,

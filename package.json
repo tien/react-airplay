@@ -26,7 +26,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
+    "prepare": "husky install && bob build",
     "release": "release-it",
     "pods": "pod-install --quiet && cd example && pod-install --quiet"
   },
@@ -75,11 +75,6 @@
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn typescript"
-    }
   },
   "release-it": {
     "git": {
