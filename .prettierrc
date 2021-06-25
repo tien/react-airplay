@@ -1,7 +1,8 @@
 {
-  "quoteProps": "consistent",
+  "requirePragma": true,
   "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "useTabs": false
+  "trailingComma": "all",
+  "bracketSpacing": false,
+  "jsxBracketSameLine": true,
+  "arrowParens": "avoid"
 }
