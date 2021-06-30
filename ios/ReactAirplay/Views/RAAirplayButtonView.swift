@@ -6,12 +6,12 @@ class RAAirplayButtonView: AVRoutePickerView {
         get { return super.tintColor }
         set { super.tintColor = newValue }
     }
-    
+
     @objc override var activeTintColor: UIColor! {
         get { return super.activeTintColor }
         set { super.activeTintColor = newValue }
     }
-    
+
     @objc override var prioritizesVideoDevices: Bool {
         get {
             if #available(iOS 13.0, *) {
