@@ -9880,15 +9880,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pod-install@npm:^0.1.23":
-  version: 0.1.23
-  resolution: "pod-install@npm:0.1.23"
-  bin:
-    pod-install: build/index.js
-  checksum: 046c50e6b8609d0fc7076aaf4f918095d21fd6d039a06f1d251587523c163fc573184493263bf126fbdbaa29c05c996936a32ed2125284c0cd8f6c06016e9d0f
-  languageName: node
-  linkType: hard
-
 "posix-character-classes@npm:^0.1.0":
   version: 0.1.1
   resolution: "posix-character-classes@npm:0.1.1"
@@ -10156,7 +10147,6 @@ __metadata:
     eslint-plugin-prettier: ^3.4.0
     husky: ^6.0.0
     jest: ^27.0.5
-    pod-install: ^0.1.23
     prettier: ^2.3.1
     react: 17.0.1
     react-native: 0.64.2

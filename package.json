@@ -27,8 +27,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\" && cd ios && Pods/SwiftLint/swiftlint --strict",
     "prepare": "husky install && bob build",
-    "release": "release-it",
-    "pods": "pod-install --quiet && cd example && pod-install --quiet"
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
@@ -59,7 +58,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
     "jest": "^27.0.5",
-    "pod-install": "^0.1.23",
     "prettier": "^2.3.1",
     "react": "17.0.1",
     "react-native": "0.64.2",
