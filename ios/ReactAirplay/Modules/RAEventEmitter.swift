@@ -3,12 +3,12 @@ class RAEventEmitter: RCTEventEmitter {
 
     override func startObserving() {
         super.startObserving()
-        self.hasListeners = true
+        hasListeners = true
     }
 
     override func stopObserving() {
         super.stopObserving()
-        self.hasListeners = false
+        hasListeners = false
     }
 
     override func sendEvent(withName name: String!, body: Any!) {
