@@ -267,6 +267,7 @@ PODS:
     - React-cxxreact (= 0.64.2)
     - React-jsi (= 0.64.2)
     - React-perflogger (= 0.64.2)
+  - SwiftLint (0.43.1)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -299,11 +300,13 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - SwiftLint
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - SwiftLint
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -392,8 +395,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: 24600e3b1aaa77126989bc58b6747509a1ba14f3
   React-runtimeexecutor: a9904c6d0218fb9f8b19d6dd88607225927668f9
   ReactCommon: 149906e01aa51142707a10665185db879898e966
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
 
-PODFILE CHECKSUM: f06be5ff132e5c89dba2baf9a016b18e8a9017fa
+PODFILE CHECKSUM: 0a181ee26f06db88c3b91411296467de643370c3
 
 COCOAPODS: 1.10.1
