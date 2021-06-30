@@ -34,7 +34,8 @@ class RAExternalPlaybackAvailabilityContext: RAEventEmitter {
     @objc(fetchExternalPlaybackAvailability:withRejecter:)
     func fetchExternalPlaybackAvailability(
         _ resolve: RCTPromiseResolveBlock,
-        withRejecter reject: RCTPromiseRejectBlock) {
+        withRejecter reject: RCTPromiseRejectBlock
+    ) {
         resolve(getExternalPlaybackAvailability())
     }
 
