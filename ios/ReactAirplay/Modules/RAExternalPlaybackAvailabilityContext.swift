@@ -7,7 +7,7 @@ class RAExternalPlaybackAvailabilityContext: RAEventEmitter {
 
     override func startObserving() {
         super.startObserving()
-        self.avRouteDetector.isRouteDetectionEnabled = true
+        avRouteDetector.isRouteDetectionEnabled = true
 
         NotificationCenter
             .default
@@ -19,7 +19,7 @@ class RAExternalPlaybackAvailabilityContext: RAEventEmitter {
 
     override func stopObserving() {
         super.stopObserving()
-        self.avRouteDetector.isRouteDetectionEnabled = false
+        avRouteDetector.isRouteDetectionEnabled = false
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -35,16 +35,16 @@ class RAExternalPlaybackAvailabilityContext: RAEventEmitter {
     func fetchExternalPlaybackAvailability(
         _ resolve: RCTPromiseResolveBlock,
         withRejecter reject: RCTPromiseRejectBlock) {
-        resolve(self.getExternalPlaybackAvailability())
+        resolve(getExternalPlaybackAvailability())
     }
 
     private func getExternalPlaybackAvailability() -> Bool {
-        return self.avRouteDetector.multipleRoutesDetected
+        return avRouteDetector.multipleRoutesDetected
     }
 
     @objc private func handleMultipleRoutesDetectedDidChange() {
-        self.sendEvent(
+        sendEvent(
             withName: RAEvent.externalPlaybackAvailabilityChanged.rawValue,
-            body: self.avRouteDetector.multipleRoutesDetected)
+            body: avRouteDetector.multipleRoutesDetected)
     }
 }

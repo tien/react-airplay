@@ -28,7 +28,7 @@ class RAAirplayConnectivityContext: RAEventEmitter {
 
     @objc(fetchAirplayConnectivity:withRejecter:)
     func fetchAirplayConnectivity(_ resolve: RCTPromiseResolveBlock, withRejecter reject: RCTPromiseRejectBlock) {
-        resolve(self.getAirplayConnectivity())
+        resolve(getAirplayConnectivity())
     }
 
     private func getAirplayConnectivity() -> Bool {
@@ -39,6 +39,6 @@ class RAAirplayConnectivityContext: RAEventEmitter {
     }
 
     @objc private func handleRouteChange() {
-        self.sendEvent(withName: RAEvent.airplayConnectivityChanged.rawValue, body: self.getAirplayConnectivity())
+        sendEvent(withName: RAEvent.airplayConnectivityChanged.rawValue, body: getAirplayConnectivity())
     }
 }
