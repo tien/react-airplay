@@ -25,7 +25,7 @@
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "eslint \"**/*.{js,ts,tsx}\" && cd ios && Pods/SwiftLint/swiftlint --strict",
     "prepare": "husky install && bob build",
     "release": "release-it",
     "pods": "pod-install --quiet && cd example && pod-install --quiet"
