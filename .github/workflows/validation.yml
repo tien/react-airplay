@@ -40,5 +40,5 @@ jobs:
       - run: yarn install --immutable && yarn dlx pod-install
         working-directory: example
 
-      - run: yarn tsc
+      - run: yarn typescript
       - run: yarn lint
