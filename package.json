@@ -23,10 +23,13 @@
     "!**/__mocks__"
   ],
   "scripts": {
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\" && cd ios && Pods/SwiftLint/swiftlint --strict",
-    "prepare": "husky install && bob build",
+    "prepack": "bob build",
     "release": "release-it"
   },
   "keywords": [
@@ -56,8 +59,9 @@
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "jest": "^27.0.6",
+    "pinst": "^2.1.6",
     "prettier": "^2.3.2",
     "react": "17.0.1",
     "react-native": "0.64.2",
