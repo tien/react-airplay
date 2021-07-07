@@ -6,4 +6,8 @@ class RAAirplayButtonViewManager: RCTViewManager {
     override func view() -> (RAAirplayButtonView) {
         return RAAirplayButtonView()
     }
+
+    override class func requiresMainQueueSetup() -> Bool {
+        return true
+    }
 }
