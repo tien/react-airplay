@@ -15,4 +15,8 @@ class RAEvents: NSObject, RCTBridgeModule {
             "AIRPLAY_CONNECTIVITY_CHANGED": RAEvent.airplayConnectivityChanged.rawValue
         ]
     }
+
+    static func requiresMainQueueSetup() -> Bool {
+        return true
+    }
 }
