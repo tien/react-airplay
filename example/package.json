@@ -17,6 +17,6 @@
     "@babel/runtime": "^7.14.6",
     "@types/react-native-video": "^5.0.7",
     "babel-plugin-module-resolver": "^4.1.0",
-    "metro-react-native-babel-preset": "^0.66.0"
+    "metro-react-native-babel-preset": "^0.66.1"
   }
 }

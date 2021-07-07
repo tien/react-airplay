@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.14.6, @babel/core@npm:^7.1.6, @babel/core@npm:^7.14.6":
+"@babel/core@npm:7.14.6, @babel/core@npm:^7.1.6, @babel/core@npm:^7.14.0, @babel/core@npm:^7.14.6":
   version: 7.14.6
   resolution: "@babel/core@npm:7.14.6"
   dependencies:
@@ -4241,11 +4241,11 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"metro-react-native-babel-preset@npm:^0.66.0":
-  version: 0.66.0
-  resolution: "metro-react-native-babel-preset@npm:0.66.0"
+"metro-react-native-babel-preset@npm:^0.66.1":
+  version: 0.66.1
+  resolution: "metro-react-native-babel-preset@npm:0.66.1"
   dependencies:
-    "@babel/core": ^7.0.0
+    "@babel/core": ^7.14.0
     "@babel/plugin-proposal-class-properties": ^7.0.0
     "@babel/plugin-proposal-export-default-from": ^7.0.0
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.0.0
@@ -4287,7 +4287,7 @@ fsevents@^2.1.2:
     react-refresh: ^0.4.0
   peerDependencies:
     "@babel/core": "*"
-  checksum: fb689698d994a569c71096d559acacd4b873f3d7b853a78bee0970d6a35fa472ca858a046c852688788a7309f18e345b11957305964cffa39581fb851a433e6c
+  checksum: bfb2da28d63c2f25c07d9f8da2f5e03485e518c863f9bdd88d349542e123a9576f70ab78aca8c857b7753270acd95b80d40422297cd8070b9f1b6757f9ae0a46
   languageName: node
   linkType: hard
 
@@ -5247,7 +5247,7 @@ fsevents@^2.1.2:
     "@babel/runtime": ^7.14.6
     "@types/react-native-video": ^5.0.7
     babel-plugin-module-resolver: ^4.1.0
-    metro-react-native-babel-preset: ^0.66.0
+    metro-react-native-babel-preset: ^0.66.1
     react: 17.0.1
     react-native: 0.64.2
     react-native-video: ^5.1.1

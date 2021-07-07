@@ -1695,6 +1695,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@humanwhocodes/config-array@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@humanwhocodes/config-array@npm:0.5.0"
+  dependencies:
+    "@humanwhocodes/object-schema": ^1.2.0
+    debug: ^4.1.1
+    minimatch: ^3.0.4
+  checksum: 71e3c1fef40166ecaacbe29b681499dc6bab3fe45df5bfb3e137baf6e50f22813cf14f24ff759a4da43b6743d7f5a776298ae1e0e266c9602bab62da2ee3b302
+  languageName: node
+  linkType: hard
+
+"@humanwhocodes/object-schema@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@humanwhocodes/object-schema@npm:1.2.0"
+  checksum: ef533ee0d227b8036e4220013575fedc3d0346e2e40bc5f5536ba5761825f23577eb4b71e52f18a2d3b827c9d83cfa60c821a71e30d5f6537918a94bc1990963
+  languageName: node
+  linkType: hard
+
 "@iarna/toml@npm:2.2.5":
   version: 2.2.5
   resolution: "@iarna/toml@npm:2.2.5"
@@ -2496,13 +2514,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.23":
-  version: 26.0.23
-  resolution: "@types/jest@npm:26.0.23"
+"@types/jest@npm:^26.0.24":
+  version: 26.0.24
+  resolution: "@types/jest@npm:26.0.24"
   dependencies:
     jest-diff: ^26.0.0
     pretty-format: ^26.0.0
-  checksum: a015676b78bdc51be6f6315acef10d9106ea8064e3e49143bca3c75b834b61285b45c5f5ccfd049a80107f1e2869a9183cdb5be85816c073ea8dd05852fafdc6
+  checksum: e5d3651c1edf197011d19ee8f4bacd52667fa673d1b2ffbfbce624208d643fd4372ebb31fa8a1d89843a7705f142e38076e25e1e7b67f3aacafd6ae8bc77cbcf
   languageName: node
   linkType: hard
 
@@ -2564,16 +2582,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:0.64.6":
-  version: 0.64.6
-  resolution: "@types/react-native@npm:0.64.6"
+"@types/react-native@npm:0.64.10":
+  version: 0.64.10
+  resolution: "@types/react-native@npm:0.64.10"
   dependencies:
     "@types/react": "*"
-  checksum: 80404084f8310b101fcedd138c750249be6d1682a68d78e6e0055e78ee58ac5c99aee3f478af8737113a3411fe2851de345fe724b4f11417a6f5db21a7b3101e
+  checksum: 6e438d046d38f0f3bae1f20c2c5acb964e5eb870c04bb4dc908f589ba330f852c6bf1dc7eb395693d047f089dbbb80a703aac70682f0fa0fc154495da0c5adde
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17.0.11":
+"@types/react@npm:*":
   version: 17.0.11
   resolution: "@types/react@npm:17.0.11"
   dependencies:
@@ -2581,6 +2599,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: ed2b57e44e8da99b13a7b0cd7d9d9159e3113a5160e25c9deae4f577cfb87f05103b54bb0e9722f48a7db3ddb3a836ade12b971bbc338d397b719886fb81efff
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^17.0.13":
+  version: 17.0.13
+  resolution: "@types/react@npm:17.0.13"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: baa5a699b72ec9ce85e56755078b375ebefd9557b4d2b506c7f39e8aa50a769aa7f3d33684667ed67c436344b5c4c6272285fd3330b14296f0f25328972bc26a
   languageName: node
   linkType: hard
 
@@ -5231,12 +5260,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.29.0":
-  version: 7.29.0
-  resolution: "eslint@npm:7.29.0"
+"eslint@npm:^7.30.0":
+  version: 7.30.0
+  resolution: "eslint@npm:7.30.0"
   dependencies:
     "@babel/code-frame": 7.12.11
     "@eslint/eslintrc": ^0.4.2
+    "@humanwhocodes/config-array": ^0.5.0
     ajv: ^6.10.0
     chalk: ^4.0.0
     cross-spawn: ^7.0.2
@@ -5276,7 +5306,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 812f8c5123860cf5bd877018ffd29abd52bbaaca55fdd616008c97da9bf47a20a7b7c7ecb7c8f753c06f77ea5d59480f3d6d76475699b2ea380237fbb7c6b3a2
+  checksum: 028048847e0252d6c972ac612fe37be55822ae2255d10d1bf68255749f7ae1364b2aa538cd95f3bc4d951fc7d36195e46b62fe8d215297ef9a6a8aeb8ca28a90
   languageName: node
   linkType: hard
 
@@ -6373,12 +6403,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "husky@npm:7.0.0"
+"husky@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "husky@npm:7.0.1"
   bin:
     husky: lib/bin.js
-  checksum: 56252eeb452612a183731a3302db07de2f283ca8c869a884edb30dffe9908beab32365792dec9145c7f6df4e41f763d74212ca7bc05c0171fa6dff2bac17c8c1
+  checksum: 1f6d87cab4339551615080664347b60168d81f3c3b84b9dc1f888068d3fe946d8b5513db5ea53bc086f235e6cc617b0aba903552e959596a49f2153ffac33cb4
   languageName: node
   linkType: hard
 
@@ -10166,13 +10196,13 @@ __metadata:
     "@commitlint/config-conventional": ^12.1.4
     "@react-native-community/eslint-config": ^3.0.0
     "@release-it/conventional-changelog": ^3.0.1
-    "@types/jest": ^26.0.23
-    "@types/react": ^17.0.11
-    "@types/react-native": 0.64.6
-    eslint: ^7.29.0
+    "@types/jest": ^26.0.24
+    "@types/react": ^17.0.13
+    "@types/react-native": 0.64.10
+    eslint: ^7.30.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^3.4.0
-    husky: ^7.0.0
+    husky: ^7.0.1
     jest: ^27.0.6
     pinst: ^2.1.6
     prettier: ^2.3.2
