@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/**/*.{h,m,mm,swift}"
   s.exclude_files = "ios/Pods", "ios/ReactAirplay.xcworkspace", "ios/Podfile", "ios/Podfile.lock"
 
-  s.dependency "React"
+  s.dependency "React-Core"
 end
