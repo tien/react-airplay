@@ -35,9 +35,9 @@ jobs:
         with:
           node-version: "16"
 
-      - run: yarn install --immutable && yarn dlx pod-install
+      - run: yarn install --immutable && npx pod-install
 
-      - run: yarn install --immutable && yarn dlx pod-install
+      - run: yarn install --immutable && npx pod-install
         working-directory: example
 
       - run: yarn typescript
