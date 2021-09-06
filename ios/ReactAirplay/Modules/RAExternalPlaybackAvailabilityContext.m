@@ -4,8 +4,9 @@
 @interface RCT_EXTERN_MODULE (RAExternalPlaybackAvailabilityContext,
                               RCTEventEmitter)
 
-RCT_EXTERN_METHOD(fetchExternalPlaybackAvailability
-                  : (RCTPromiseResolveBlock)resolve withRejecter
-                  : (RCTPromiseRejectBlock)reject)
+_RCT_EXTERN_REMAP_METHOD(fetchExternalPlaybackAvailability,
+                         fetchExternalPlaybackAvailabilityWithResolver
+                         : (RCTPromiseResolveBlock)resolve withRejecter
+                         : (RCTPromiseRejectBlock)reject, NO)
 
 @end
