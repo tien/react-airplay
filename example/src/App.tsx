@@ -30,10 +30,10 @@ export default () => {
       </View>
       <View style={styles.box}>
         <AirplayButton
-          style={styles.box}
+          style={styles.button}
           prioritizesVideoDevices={true}
-          tintColor={'yellow'}
-          activeTintColor={'blue'}
+          tintColor="yellow"
+          activeTintColor="red"
         />
       </View>
     </View>
