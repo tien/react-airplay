@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Platform } from 'react-native';
+import {useEffect, useState} from 'react';
+import {Platform} from 'react-native';
 
 import {
   AirplayConnectivityContext,
@@ -13,7 +13,7 @@ export type UseExternalPlaybackAvailabilityOptions = {
 };
 
 export const useExternalPlaybackAvailability = (
-  options?: UseExternalPlaybackAvailabilityOptions
+  options?: UseExternalPlaybackAvailabilityOptions,
 ) => {
   const [isExternalPlaybackAvailable, setIsExternalPlaybackAvailable] =
     useState(false);
@@ -22,11 +22,11 @@ export const useExternalPlaybackAvailability = (
     if (Platform.OS !== 'ios' || (options?.useCachedValue ?? false)) return;
 
     const subscription = onExternalPlaybackAvailabilityChanged(
-      setIsExternalPlaybackAvailable
+      setIsExternalPlaybackAvailable,
     );
 
     ExternalPlaybackAvailabilityContext.fetchExternalPlaybackAvailability().then(
-      setIsExternalPlaybackAvailable
+      setIsExternalPlaybackAvailable,
     );
 
     return subscription.remove.bind(subscription);
@@ -44,7 +44,7 @@ export const useAirplayConnectivity = () => {
     const subscription = onAirplayConnectivityChanged(setIsAirplayConnected);
 
     AirplayConnectivityContext.fetchAirplayConnectivity().then(
-      setIsAirplayConnected
+      setIsAirplayConnected,
     );
 
     return subscription.remove.bind(subscription);

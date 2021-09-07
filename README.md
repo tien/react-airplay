@@ -15,9 +15,11 @@ yarn add react-airplay
 ```tsx
 import {
   AirplayButton,
+  showRoutePicker,
   useAirplayConnectivity,
   useExternalPlaybackAvailability,
 } from 'react-airplay';
+import {Button} from 'react-native'
 
 const App = () => {
   const isAirplayConnected = useAirplayConnectivity();
@@ -35,6 +37,7 @@ const App = () => {
             height: 24,
           }}
         />
+        <Button title="Custom Button" onPress={() => showRoutePicker({prioritizesVideoDevices: true})}/>
       )}
     </View>
   );
@@ -46,8 +49,8 @@ const App = () => {
 Enabling route detection increase power consumption, as per [Apple documentation](https://developer.apple.com/documentation/avfoundation/avroutedetector/2915762-isroutedetectionenabled). So be sure to un-mount the component when not in use, if that's not possible (e.g. when component is part of a `react-navigation` screen) the `useCachedValue` option parameter can be used:
 
 ```typescript
-import { useIsFocused } from '@react-navigation/native';
-import { useExternalPlaybackAvailability } from 'react-airplay';
+import {useIsFocused} from '@react-navigation/native';
+import {useExternalPlaybackAvailability} from 'react-airplay';
 
 const isScreenFocused = useIsFocused();
 
