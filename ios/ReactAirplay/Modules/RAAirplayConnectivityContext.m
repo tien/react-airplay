@@ -5,7 +5,7 @@
 
 _RCT_EXTERN_REMAP_METHOD(fetchAirplayConnectivity,
                          fetchAirplayConnectivityWithResolver
-                         : (RCTPromiseResolveBlock)resolve withRejecter
+                         : (RCTPromiseResolveBlock)resolve rejecter
                          : (RCTPromiseRejectBlock)reject, NO)
 
 @end

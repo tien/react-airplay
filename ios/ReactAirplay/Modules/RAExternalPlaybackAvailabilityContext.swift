@@ -32,10 +32,10 @@ class RAExternalPlaybackAvailabilityContext: RAEventEmitter {
     return false
   }
 
-  @objc(fetchExternalPlaybackAvailabilityWithResolver:withRejecter:)
+  @objc(fetchExternalPlaybackAvailabilityWithResolver:rejecter:)
   func fetchExternalPlaybackAvailability(
-    withResolver resolve: RCTPromiseResolveBlock,
-    withRejecter reject: RCTPromiseRejectBlock
+    resolver resolve: RCTPromiseResolveBlock,
+    rejecter reject: RCTPromiseRejectBlock
   ) {
     resolve(getExternalPlaybackAvailability())
   }
