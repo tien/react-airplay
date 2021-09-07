@@ -6,7 +6,7 @@
 
 _RCT_EXTERN_REMAP_METHOD(fetchExternalPlaybackAvailability,
                          fetchExternalPlaybackAvailabilityWithResolver
-                         : (RCTPromiseResolveBlock)resolve withRejecter
+                         : (RCTPromiseResolveBlock)resolve rejecter
                          : (RCTPromiseRejectBlock)reject, NO)
 
 @end
