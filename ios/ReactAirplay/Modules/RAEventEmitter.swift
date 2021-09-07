@@ -1,3 +1,5 @@
+import React
+
 class RAEventEmitter: RCTEventEmitter {
   internal var hasListeners = false
 

@@ -1,4 +1,5 @@
 import AVKit
+import React
 
 @available(iOS 11.0, *)
 @objc(RAAirplayButtonViewManager)
