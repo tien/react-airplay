@@ -2733,9 +2733,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/eslint-config@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@react-native-community/eslint-config@npm:3.0.0"
+"@react-native-community/eslint-config@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@react-native-community/eslint-config@npm:3.0.1"
   dependencies:
     "@react-native-community/eslint-plugin": ^1.1.0
     "@typescript-eslint/eslint-plugin": ^4.22.1
@@ -2752,7 +2752,8 @@ __metadata:
     prettier: ^2.0.2
   peerDependencies:
     eslint: ">=7"
-  checksum: aca55056da7b37c149e4af6f81f510b411fe604ca0ac00e2b953e5e5ebdb5bee2624c5b68c828837cf611e677802bc1aca00a9e9fa4746813d73a165ec3c7371
+    prettier: ">=2"
+  checksum: 00b110590fecd926c55fe4e2e5c453fec9fa7813852811a887723990078ff69961fee59bd0f473bbb97705b84fe2434337a3a14ba4e900bef4ee2d9ff296c127
   languageName: node
   linkType: hard
 
@@ -3040,12 +3041,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:0.64.13":
-  version: 0.64.13
-  resolution: "@types/react-native@npm:0.64.13"
+"@types/react-native@npm:0.64.14":
+  version: 0.64.14
+  resolution: "@types/react-native@npm:0.64.14"
   dependencies:
     "@types/react": "*"
-  checksum: 3e53cc7d31d5b3a134871bcc6a0c61c10caecc90f5b2d691fd8f8a480f145395098924146a05a4eb7d1a1ddaa516becdc600cdf1d50a6443e4324f94ec2e987e
+  checksum: 0a3a25cff111e81ca0e952e0a4178525b5b1346009db5516f82a37575a1294089754b2929b65789d3b69c176707b0306446c29bfa2b4885a019153855c33fc94
   languageName: node
   linkType: hard
 
@@ -3060,14 +3061,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.19":
-  version: 17.0.19
-  resolution: "@types/react@npm:17.0.19"
+"@types/react@npm:^17.0.20":
+  version: 17.0.20
+  resolution: "@types/react@npm:17.0.20"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: d5af52623dd863e5a9f64eb72979f19c21e03012e25ee93adc93f664ed7976e81b654128dc653b225ad5ba2aaae24e0febe37face272bb051d6289e23ed7177d
+  checksum: e342bfaa4fe052fc3a445ea49f746f3fd82cfc9c8028eae139a3e0763ead1871f353bd40da2a472f23d2b52544d2781d40e3159c0703e7e2ff08c13f067a3b9c
   languageName: node
   linkType: hard
 
@@ -10749,11 +10750,11 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
-    "@react-native-community/eslint-config": ^3.0.0
+    "@react-native-community/eslint-config": ^3.0.1
     "@release-it/conventional-changelog": ^3.3.0
     "@types/jest": ^27.0.1
-    "@types/react": ^17.0.19
-    "@types/react-native": 0.64.13
+    "@types/react": ^17.0.20
+    "@types/react-native": 0.64.14
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
