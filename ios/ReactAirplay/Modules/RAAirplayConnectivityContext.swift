@@ -1,4 +1,5 @@
 import AVKit
+import React
 
 @objc(RAAirplayConnectivityContext)
 class RAAirplayConnectivityContext: RAEventEmitter {
