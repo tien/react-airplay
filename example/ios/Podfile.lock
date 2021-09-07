@@ -111,7 +111,7 @@ PODS:
     - React-RCTSettings (= 0.65.1)
     - React-RCTText (= 0.65.1)
     - React-RCTVibration (= 0.65.1)
-  - react-airplay (1.0.1):
+  - react-airplay (1.0.2):
     - React-Core
   - React-callinvoker (0.65.1)
   - React-Core (0.65.1):
@@ -527,7 +527,7 @@ SPEC CHECKSUMS:
   RCTRequired: 6cf071ab2adfd769014b3d94373744ee6e789530
   RCTTypeSafety: b829c59453478bb5b02487b8de3336386ab93ab1
   React: 29d8a785041b96a2754c25cc16ddea57b7a618ce
-  react-airplay: 2aac2bc7931d7f8163b380d285561022184ab7b5
+  react-airplay: ba4a2583cbc403b508c1e812968fea7a91fc3bb5
   React-callinvoker: 2857b61132bd7878b736e282581f4b42fd93002b
   React-Core: 001e21bad5ca41e59e9d90df5c0b53da04c3ce8e
   React-CoreModules: 0a0410ab296a62ab38e2f8d321e822d1fcc2fe49

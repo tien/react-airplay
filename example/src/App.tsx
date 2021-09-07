@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
   AirplayButton,
+  showRoutePicker,
   useAirplayConnectivity,
   useExternalPlaybackAvailability,
 } from 'react-airplay';
-import { StyleSheet, Text, View } from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import Video from 'react-native-video';
 
 export default () => {
@@ -36,6 +37,15 @@ export default () => {
           activeTintColor="red"
         />
       </View>
+      <View>
+        <Button
+          title="Custom Button"
+          onPress={useCallback(
+            () => showRoutePicker({prioritizesVideoDevices: true}),
+            [],
+          )}
+        />
+      </View>
     </View>
   );
 };
@@ -44,7 +54,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  video: { flex: 1 },
+  video: {flex: 1},
   box: {
     flex: 1,
   },

@@ -1,4 +1,4 @@
-import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
+import {NativeEventEmitter, NativeModules, Platform} from 'react-native';
 
 export type ExternalPlaybackAvailabilityContext = {
   fetchExternalPlaybackAvailability: () => Promise<boolean>;
@@ -8,10 +8,15 @@ export type AirplayConnectivityContext = {
   fetchAirplayConnectivity: () => Promise<boolean>;
 };
 
+export type ShowRoutePickerOptions = {
+  prioritizesVideoDevices?: boolean;
+};
+
 const {
   RAEvents,
   RAAirplayConnectivityContext,
   RAExternalPlaybackAvailabilityContext,
+  RARoutePickerContext,
 } = NativeModules;
 
 const constants =
@@ -30,25 +35,29 @@ export const {
 } = constants;
 
 export const ExternalPlaybackAvailabilityEventEmitter = new NativeEventEmitter(
-  RAExternalPlaybackAvailabilityContext
+  RAExternalPlaybackAvailabilityContext,
 );
 
 export const AirplayConnectivityEventEmitter = new NativeEventEmitter(
-  RAAirplayConnectivityContext
+  RAAirplayConnectivityContext,
 );
 
 export const onExternalPlaybackAvailabilityChanged = (
-  callback: (availability: boolean) => void
+  callback: (availability: boolean) => void,
 ) =>
   ExternalPlaybackAvailabilityEventEmitter.addListener(
     EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,
-    callback
+    callback,
   );
 
 export const onAirplayConnectivityChanged = (
-  callback: (connected: boolean) => void
+  callback: (connected: boolean) => void,
 ) =>
   AirplayConnectivityEventEmitter.addListener(
     AIRPLAY_CONNECTIVITY_CHANGED,
-    callback
+    callback,
   );
+
+export const showRoutePicker: (
+  options?: ShowRoutePickerOptions,
+) => Promise<void> = RARoutePickerContext.showRoutePicker;

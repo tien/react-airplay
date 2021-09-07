@@ -24,7 +24,7 @@ export type AirplayButtonProps = Omit<
 };
 
 const RAAirplayButton = requireNativeComponent<NativeAirplayButtonProps>(
-  'RAAirplayButtonView'
+  'RAAirplayButtonView',
 );
 
 export const AirplayButton = ({

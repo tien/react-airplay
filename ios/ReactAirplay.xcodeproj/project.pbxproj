@@ -13,6 +13,8 @@
 		E205E8DB25DC611800BE02C0 /* RAAirplayConnectivityContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E205E8DA25DC611800BE02C0 /* RAAirplayConnectivityContext.m */; };
 		E205E8E125DC648F00BE02C0 /* RAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E205E8E025DC648F00BE02C0 /* RAEvent.m */; };
 		E205E8EC25DC676800BE02C0 /* RAAirplayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E205E8EB25DC676800BE02C0 /* RAAirplayButtonView.swift */; };
+		E271FCC326E637530023F7DA /* RARoutePickerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271FCC126E637530023F7DA /* RARoutePickerContext.swift */; };
+		E271FCC426E637530023F7DA /* RARoutePickerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E271FCC226E637530023F7DA /* RARoutePickerContext.m */; };
 		E28F4EB125DBD3AB00DECA36 /* RAEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */; };
 		E28F4EB325DBD3AE00DECA36 /* RAAirplayButtonViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E250438425D9C78A00CB870C /* RAAirplayButtonViewManager.m */; };
 		E28F4EB525DBD3B100DECA36 /* RAAirplayButtonViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E250438525D9C78A00CB870C /* RAAirplayButtonViewManager.swift */; };
@@ -43,6 +45,8 @@
 		E205E8EB25DC676800BE02C0 /* RAAirplayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAirplayButtonView.swift; sourceTree = "<group>"; };
 		E250438425D9C78A00CB870C /* RAAirplayButtonViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAAirplayButtonViewManager.m; sourceTree = "<group>"; };
 		E250438525D9C78A00CB870C /* RAAirplayButtonViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAirplayButtonViewManager.swift; sourceTree = "<group>"; };
+		E271FCC126E637530023F7DA /* RARoutePickerContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RARoutePickerContext.swift; sourceTree = "<group>"; };
+		E271FCC226E637530023F7DA /* RARoutePickerContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARoutePickerContext.m; sourceTree = "<group>"; };
 		E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAEventEmitter.swift; sourceTree = "<group>"; };
 		E28F4EBB25DBD65600DECA36 /* RAEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAEvent.swift; sourceTree = "<group>"; };
 		E28F4EBE25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAExternalPlaybackAvailabilityContext.swift; sourceTree = "<group>"; };
@@ -81,11 +85,11 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				E217567C2686C1BA001AA41E /* ReactAirplay */,
 				F4FF95D5245B92E700C19C63 /* ReactAirplay-Bridging-Header.h */,
-				134814211AA4EA7D00B7C361 /* Products */,
-				C4768C40F0DA143C73316BE6 /* Pods */,
 				2DEF70C9DA0040849B61EB8B /* Frameworks */,
+				C4768C40F0DA143C73316BE6 /* Pods */,
+				134814211AA4EA7D00B7C361 /* Products */,
+				E217567C2686C1BA001AA41E /* ReactAirplay */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,11 +115,13 @@
 		E205E8E825DC65D000BE02C0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */,
-				E205E8D625DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift */,
 				E205E8DA25DC611800BE02C0 /* RAAirplayConnectivityContext.m */,
-				E28F4EBE25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift */,
+				E205E8D625DC5F3000BE02C0 /* RAAirplayConnectivityContext.swift */,
+				E28F4EAF25DBD34600DECA36 /* RAEventEmitter.swift */,
 				E205E8D325DC5CF400BE02C0 /* RAExternalPlaybackAvailabilityContext.m */,
+				E28F4EBE25DBD67C00DECA36 /* RAExternalPlaybackAvailabilityContext.swift */,
+				E271FCC226E637530023F7DA /* RARoutePickerContext.m */,
+				E271FCC126E637530023F7DA /* RARoutePickerContext.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -247,8 +253,10 @@
 				E28F4EB125DBD3AB00DECA36 /* RAEventEmitter.swift in Sources */,
 				E205E8E125DC648F00BE02C0 /* RAEvent.m in Sources */,
 				E28F4EB325DBD3AE00DECA36 /* RAAirplayButtonViewManager.m in Sources */,
+				E271FCC426E637530023F7DA /* RARoutePickerContext.m in Sources */,
 				E205E8DB25DC611800BE02C0 /* RAAirplayConnectivityContext.m in Sources */,
 				E28F4EB525DBD3B100DECA36 /* RAAirplayButtonViewManager.swift in Sources */,
+				E271FCC326E637530023F7DA /* RARoutePickerContext.swift in Sources */,
 				E205E8EC25DC676800BE02C0 /* RAAirplayButtonView.swift in Sources */,
 				E28F4EBC25DBD65600DECA36 /* RAEvent.swift in Sources */,
 			);
