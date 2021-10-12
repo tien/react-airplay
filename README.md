@@ -8,7 +8,14 @@ Airplay bridge for React Native.
 
 ```sh
 yarn add react-airplay
+npx pod-install
 ```
+  
+- Extra step for creating a bridging header:
+  
+  > Only required if your project doesn't already use Swift
+  
+  Create an empty Swift file in XCode, it will then ask if you want to create a bridging header
 
 ## Usage
 
