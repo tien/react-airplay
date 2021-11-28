@@ -5,6 +5,7 @@ import {
   useAirplayConnectivity,
   useExternalPlaybackAvailability,
 } from 'react-airplay';
+import {Platform} from 'react-native';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import Video from 'react-native-video';
 
@@ -30,12 +31,14 @@ export default () => {
         <Text>Airplay connected: {String(isAirplayConnected)}</Text>
       </View>
       <View style={styles.box}>
-        <AirplayButton
-          style={styles.button}
-          prioritizesVideoDevices={true}
-          tintColor="yellow"
-          activeTintColor="red"
-        />
+        {Platform.OS === 'ios' && (
+          <AirplayButton
+            style={styles.button}
+            prioritizesVideoDevices={true}
+            tintColor="yellow"
+            activeTintColor="red"
+          />
+        )}
       </View>
       <View>
         <Button

@@ -5358,7 +5358,7 @@ fsevents@^2.1.2:
     react: 17.0.2
     react-native: 0.65.1
     react-native-codegen: ^0.0.7
-    react-native-video: ^5.1.1
+    react-native-video: ^5.2.0
   languageName: unknown
   linkType: soft
 
@@ -5397,14 +5397,14 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"react-native-video@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "react-native-video@npm:5.1.1"
+"react-native-video@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "react-native-video@npm:5.2.0"
   dependencies:
     keymirror: ^0.1.1
     prop-types: ^15.7.2
     shaka-player: ^2.5.9
-  checksum: 83f3289c2998dc969a81117743e163085dbd2a407dbb5cde90e35c654de66f6340353c862604960a26e8b7bc4dcbcfeacf8d442a16f75d07b8f02a23c40fe197
+  checksum: 6182b8c880620bc16ef1871634a92e563542615a27db40d732faca72762e6bd2539cdedaf473d447b336bb40168461d51dc34995d9876ee4913ace76b890b59d
   languageName: node
   linkType: hard
 
