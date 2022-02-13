@@ -15,6 +15,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ios/Pods
+            example/ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
       - name: Configure git user
         run: |
           git config user.name "${GITHUB_ACTOR}"
@@ -29,6 +38,10 @@ jobs:
           cache: yarn
 
       - run: yarn install --immutable
+      - run: npx pod-install
+      - run: yarn install --immutable
+        working-directory: example
+
       - run: yarn typescript
       - run: yarn lint
       - run: yarn build
