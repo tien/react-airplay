@@ -3,7 +3,7 @@ import React
 
 @objc(RARoutePickerContext)
 class RARoutePickerContext: NSObject {
-  @objc 
+  @objc
   static func requiresMainQueueSetup() -> Bool {
     return true
   }

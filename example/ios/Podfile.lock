@@ -111,7 +111,7 @@ PODS:
     - React-RCTSettings (= 0.65.1)
     - React-RCTText (= 0.65.1)
     - React-RCTVibration (= 0.65.1)
-  - react-airplay (1.0.2):
+  - react-airplay (1.1.1):
     - React-Core
   - React-callinvoker (0.65.1)
   - React-Core (0.65.1):
@@ -289,10 +289,10 @@ PODS:
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
   - React-jsinspector (0.65.1)
-  - react-native-video (5.1.1):
+  - react-native-video (5.2.0):
     - React-Core
-    - react-native-video/Video (= 5.1.1)
-  - react-native-video/Video (5.1.1):
+    - react-native-video/Video (= 5.2.0)
+  - react-native-video/Video (5.2.0):
     - React-Core
   - React-perflogger (0.65.1)
   - React-RCTActionSheet (0.65.1):
@@ -527,7 +527,7 @@ SPEC CHECKSUMS:
   RCTRequired: 6cf071ab2adfd769014b3d94373744ee6e789530
   RCTTypeSafety: b829c59453478bb5b02487b8de3336386ab93ab1
   React: 29d8a785041b96a2754c25cc16ddea57b7a618ce
-  react-airplay: ba4a2583cbc403b508c1e812968fea7a91fc3bb5
+  react-airplay: 2a6b84cd6c8611d3ab6937879c2a80acbd1f9b41
   React-callinvoker: 2857b61132bd7878b736e282581f4b42fd93002b
   React-Core: 001e21bad5ca41e59e9d90df5c0b53da04c3ce8e
   React-CoreModules: 0a0410ab296a62ab38e2f8d321e822d1fcc2fe49
@@ -536,7 +536,7 @@ SPEC CHECKSUMS:
   React-jsi: 12913c841713a15f64eabf5c9ad98592c0ec5940
   React-jsiexecutor: 43f2542aed3c26e42175b339f8d37fe3dd683765
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
-  react-native-video: 0bb76b6d6b77da3009611586c7dbf817b947f30e
+  react-native-video: a4c2635d0802f983594b7057e1bce8f442f0ad28
   React-perflogger: fd28ee1f2b5b150b00043f0301d96bd417fdc339
   React-RCTActionSheet: 7f3fa0855c346aa5d7c60f9ced16e067db6d29fa
   React-RCTAnimation: 2119a18ee26159004b001bc56404ca5dbaae6077
@@ -554,4 +554,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5b7c2670cb99016cfbd61372f5db38d3d446db5f
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2
