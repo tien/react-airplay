@@ -29,7 +29,7 @@ class RAExternalPlaybackAvailabilityContext: RAEventEmitter {
     return [RAEvent.externalPlaybackAvailabilityChanged.rawValue]
   }
 
-  override class func requiresMainQueueSetup() -> Bool {
+  @objc override class func requiresMainQueueSetup() -> Bool {
     return false
   }
 

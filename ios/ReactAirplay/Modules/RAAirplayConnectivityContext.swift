@@ -24,7 +24,7 @@ class RAAirplayConnectivityContext: RAEventEmitter {
     return [RAEvent.airplayConnectivityChanged.rawValue]
   }
 
-  override class func requiresMainQueueSetup() -> Bool {
+  @objc override class func requiresMainQueueSetup() -> Bool {
     return false
   }
 
