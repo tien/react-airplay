@@ -27,10 +27,11 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
+    "build": "bob build",
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\" && cd ios && Pods/SwiftLint/swiftlint --strict",
-    "prepack": "bob build",
+    "prepack": "yarn build",
     "release": "release-it"
   },
   "keywords": [
