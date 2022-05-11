@@ -21,29 +21,42 @@ class RAAirplayConnectivityContext: RAEventEmitter {
   }
 
   override func supportedEvents() -> [String]! {
-    return [RAEvent.airplayConnectivityChanged.rawValue]
+    return [RAEvent.avAudioSessionRoutesChanged.rawValue]
   }
 
   @objc override class func requiresMainQueueSetup() -> Bool {
     return false
   }
 
-  @objc(fetchAirplayConnectivityWithResolver:rejecter:)
-  func fetchAirplayConnectivity(
+  @objc(fetchAVAudioSessionRoutesWithResolver:rejecter:)
+  func fetchAVAudioSessionRoutes(
     resolver resolve: RCTPromiseResolveBlock,
     rejecter reject: RCTPromiseRejectBlock
   ) {
-    resolve(getAirplayConnectivity())
+    resolve(getAVAudioSessionRoutes())
   }
 
-  private func getAirplayConnectivity() -> Bool {
+    private func getAVAudioSessionRoutes() -> [[String: Any]] {
     let session = AVAudioSession.sharedInstance()
-    let airplayConnected = session.currentRoute.outputs.contains { $0.portType == .airPlay }
+    let routes = session.currentRoute.outputs.map { route in [
+      "portName": route.portName,
+      "portType": route.portType,
+      "channels": route.channels?.map { channel in [
+        "channelName": channel.channelName,
+        "channelNumber": channel.channelNumber,
+        "owningPortUID": channel.owningPortUID,
+        "channelLabel": channel.channelLabel,
+      ]
+      },
+      "uid": route.uid,
+      "hasHardwareVoiceCallProcessing": route.hasHardwareVoiceCallProcessing,
+    ]
+    }
 
-    return airplayConnected
+    return routes
   }
 
   @objc private func handleRouteChange() {
-    sendEvent(withName: RAEvent.airplayConnectivityChanged.rawValue, body: getAirplayConnectivity())
+    sendEvent(withName: RAEvent.avAudioSessionRoutesChanged.rawValue, body: getAVAudioSessionRoutes())
   }
 }

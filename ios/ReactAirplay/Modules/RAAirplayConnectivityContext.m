@@ -3,8 +3,8 @@
 
 @interface RCT_EXTERN_MODULE (RAAirplayConnectivityContext, RCTEventEmitter)
 
-_RCT_EXTERN_REMAP_METHOD(fetchAirplayConnectivity,
-                         fetchAirplayConnectivityWithResolver
+_RCT_EXTERN_REMAP_METHOD(fetchAVAudioSessionRoutes,
+                         fetchAVAudioSessionRoutesWithResolver
                          : (RCTPromiseResolveBlock)resolve rejecter
                          : (RCTPromiseRejectBlock)reject, NO)
 

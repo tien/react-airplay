@@ -3,9 +3,10 @@ import {
   AirplayButton,
   showRoutePicker,
   useAirplayConnectivity,
+  useAVAudioSessionRoutes,
   useExternalPlaybackAvailability,
 } from 'react-airplay';
-import {Platform} from 'react-native';
+import {Platform, ScrollView} from 'react-native';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import Video from 'react-native-video';
 
@@ -14,9 +15,10 @@ export default () => {
     useCachedValue: false,
   });
   const isAirplayConnected = useAirplayConnectivity();
+  const routes = useAVAudioSessionRoutes();
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Video
         source={{
           uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
@@ -29,6 +31,7 @@ export default () => {
           External playback available: {String(isExternalPlaybackAvailable)}
         </Text>
         <Text>Airplay connected: {String(isAirplayConnected)}</Text>
+        <Text>Routes: {JSON.stringify(routes)}</Text>
       </View>
       <View style={styles.box}>
         {Platform.OS === 'ios' && (
@@ -49,17 +52,20 @@ export default () => {
           )}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
   video: {flex: 1},
   box: {
     flex: 1,
+    marginLeft: 144,
+    marginRight: 144,
   },
   button: {
     width: '100%',

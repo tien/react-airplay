@@ -25,12 +25,14 @@ import {
   showRoutePicker,
   useAirplayConnectivity,
   useExternalPlaybackAvailability,
+  useAVAudioSessionRoutes,
 } from 'react-airplay';
-import {Button} from 'react-native'
+import {Button, Text} from 'react-native'
 
 const App = () => {
   const isAirplayConnected = useAirplayConnectivity();
   const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
+  const routes = useAVAudioSessionRoutes();
 
   return (
     <View>
@@ -44,7 +46,11 @@ const App = () => {
             height: 24,
           }}
         />
+
         <Button title="Custom Button" onPress={() => showRoutePicker({prioritizesVideoDevices: true})}/>
+      )}
+      {routes.length && (
+        <Text>Currently playing on {airplayRoutes.map((route) => route.portName).join(', ')}</Text>
       )}
     </View>
   );
