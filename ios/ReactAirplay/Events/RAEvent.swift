@@ -2,7 +2,7 @@ import React
 
 enum RAEvent: String, CaseIterable {
   case externalPlaybackAvailabilityChanged
-  case airplayConnectivityChanged
+  case avAudioSessionRoutesChanged
 }
 
 @objc(RAEvents)
@@ -15,7 +15,7 @@ class RAEvents: NSObject, RCTBridgeModule {
     return [
       "EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED": RAEvent.externalPlaybackAvailabilityChanged
         .rawValue,
-      "AIRPLAY_CONNECTIVITY_CHANGED": RAEvent.airplayConnectivityChanged.rawValue,
+      "AV_AUDIO_SESSION_ROUTES_CHANGED": RAEvent.avAudioSessionRoutesChanged.rawValue,
     ]
   }
 

@@ -2,8 +2,9 @@ import {useEffect, useState} from 'react';
 
 import {
   AirplayConnectivityContext,
+  AVAudioSessionRoute,
   ExternalPlaybackAvailabilityContext,
-  onAirplayConnectivityChanged,
+  onAVAudioSessionRoutesChanged,
   onExternalPlaybackAvailabilityChanged,
 } from './airplayModule';
 
@@ -35,17 +36,25 @@ export const useExternalPlaybackAvailability = (
 };
 
 export const useAirplayConnectivity = () => {
-  const [isAirplayConnected, setIsAirplayConnected] = useState(false);
+  const routes = useAirplayRoutes();
+  return routes.length > 0;
+};
+
+export const useAirplayRoutes = () => {
+  const routes = useAVAudioSessionRoutes();
+  return routes.filter(route => route.portType === 'AirPlay');
+};
+
+export const useAVAudioSessionRoutes = () => {
+  const [routes, setRoutes] = useState<AVAudioSessionRoute[]>([]);
 
   useEffect(() => {
-    const subscription = onAirplayConnectivityChanged(setIsAirplayConnected);
+    const subscription = onAVAudioSessionRoutesChanged(setRoutes);
 
-    AirplayConnectivityContext?.fetchAirplayConnectivity().then(
-      setIsAirplayConnected,
-    );
+    AirplayConnectivityContext?.fetchAVAudioSessionRoutes().then(setRoutes);
 
     return subscription.remove.bind(subscription);
   }, []);
 
-  return isAirplayConnected;
+  return routes;
 };
