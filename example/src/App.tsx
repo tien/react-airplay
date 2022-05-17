@@ -3,7 +3,7 @@ import {
   AirplayButton,
   showRoutePicker,
   useAirplayConnectivity,
-  useAVAudioSessionRoutes,
+  useAvAudioSessionRoutes,
   useExternalPlaybackAvailability,
 } from 'react-airplay';
 import {Platform, ScrollView} from 'react-native';
@@ -15,7 +15,7 @@ export default () => {
     useCachedValue: false,
   });
   const isAirplayConnected = useAirplayConnectivity();
-  const routes = useAVAudioSessionRoutes();
+  const routes = useAvAudioSessionRoutes();
 
   return (
     <ScrollView contentContainerStyle={styles.container}>

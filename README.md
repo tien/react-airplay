@@ -10,11 +10,11 @@ Airplay bridge for React Native.
 yarn add react-airplay
 npx pod-install
 ```
-  
+
 - Extra step for creating a bridging header:
-  
+
   > Only required if your project doesn't already use Swift
-  
+
   Create an empty Swift file in XCode, it will then ask if you want to create a bridging header
 
 ## Usage
@@ -25,14 +25,14 @@ import {
   showRoutePicker,
   useAirplayConnectivity,
   useExternalPlaybackAvailability,
-  useAVAudioSessionRoutes,
+  useAvAudioSessionRoutes,
 } from 'react-airplay';
 import {Button, Text} from 'react-native'
 
 const App = () => {
   const isAirplayConnected = useAirplayConnectivity();
   const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
-  const routes = useAVAudioSessionRoutes();
+  const routes = useAvAudioSessionRoutes();
 
   return (
     <View>
@@ -50,7 +50,7 @@ const App = () => {
         <Button title="Custom Button" onPress={() => showRoutePicker({prioritizesVideoDevices: true})}/>
       )}
       {routes.length && (
-        <Text>Currently playing on {airplayRoutes.map((route) => route.portName).join(', ')}</Text>
+        <Text>Currently playing on {routes.map((route) => route.portName).join(', ')}</Text>
       )}
     </View>
   );

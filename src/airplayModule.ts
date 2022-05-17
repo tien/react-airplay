@@ -10,7 +10,7 @@ export type ExternalPlaybackAvailabilityContext = NativeModule & {
 };
 
 /* As per https://developer.apple.com/documentation/avfaudio/avaudiosession/port */
-export type AVAudioSessionPortType =
+export type AvAudioSessionPortType =
   | 'BuiltInMic'
   | 'HeadsetMic'
   | 'LineIn'
@@ -32,24 +32,24 @@ export type AVAudioSessionPortType =
   | 'UsbAudio'
   | 'Virtual';
 
-export interface AVAudioSessionChannel {
+export interface AvAudioSessionChannel {
   channelName: string;
   channelNumber: number;
   owningPortUID: string;
   channelLabel: string;
 }
 
-export interface AVAudioSessionRoute {
+export interface AvAudioSessionRoute {
   portName: string;
-  portType: AVAudioSessionPortType;
-  channels: AVAudioSessionChannel[];
+  portType: AvAudioSessionPortType;
+  channels: AvAudioSessionChannel[];
   uid: string;
   hasHardwareVoiceCallProcessing: boolean;
   isSpatialAudioEnabled: boolean;
 }
 
 export type AirplayConnectivityContext = NativeModule & {
-  fetchAVAudioSessionRoutes: () => Promise<AVAudioSessionRoute[]>;
+  fetchAvAudioSessionRoutes: () => Promise<AvAudioSessionRoute[]>;
 };
 
 export type RoutePickerContext = NativeModule & {
@@ -99,8 +99,8 @@ export const onExternalPlaybackAvailabilityChanged = (
     callback,
   );
 
-export const onAVAudioSessionRoutesChanged = (
-  callback: (routes: AVAudioSessionRoute[]) => void,
+export const onAvAudioSessionRoutesChanged = (
+  callback: (routes: AvAudioSessionRoute[]) => void,
 ) =>
   AirplayConnectivityEventEmitter.addListener(
     AV_AUDIO_SESSION_ROUTES_CHANGED,
