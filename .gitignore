@@ -62,10 +62,10 @@ android/keystores/debug.keystore
 lib/
 
 # Yarn
+.pnp.*
 .yarn/*
 !.yarn/patches
-!.yarn/releases
 !.yarn/plugins
+!.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-.pnp.*
