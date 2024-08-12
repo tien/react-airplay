@@ -11,9 +11,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: |
             ios/Pods
@@ -22,10 +22,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pods-
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: yarn
+      - uses: volta-cli/action@v4
 
       - run: yarn install --immutable && npx pod-install
 

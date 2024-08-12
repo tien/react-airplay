@@ -11,11 +11,11 @@ jobs:
   release:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: |
             ios/Pods
@@ -32,10 +32,7 @@ jobs:
       - name: Set npm token
         run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: yarn
+      - uses: volta-cli/action@v4
 
       - run: yarn install --immutable
       - run: npx pod-install
