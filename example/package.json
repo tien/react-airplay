@@ -19,6 +19,6 @@
     "@types/react-native-video": "^5.0.20",
     "babel-plugin-module-resolver": "^4.1.0",
     "metro-react-native-babel-preset": "^0.67.0",
-    "react-native-codegen": "^0.0.7"
+    "react-native-codegen": "^0.70.7"
   }
 }
