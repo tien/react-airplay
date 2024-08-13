@@ -25,7 +25,6 @@ export default () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* @ts-expect-error TODO: fix this */}
       <Video
         source={{
           uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
