@@ -1,0 +1,28 @@
+name: Publishing
+
+on:
+  push:
+    branches: [main]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  publish:
+    runs-on: macos-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+
+      - uses: changesets/action@v1
+        with:
+          publish: yarn publish:packages
+          commit: "chore: version packages"
+          title: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
