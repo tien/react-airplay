@@ -1,5 +1,0 @@
----
-"react-airplay": patch
----
-
-Placeholder.
