@@ -1,0 +1,16 @@
+name: Pull request
+
+on:
+  pull_request:
+    branches: [main]
+    # Add trigger for `ready_for_review`
+    # https://github.com/changesets/action/issues/187
+    types: [opened, reopened, synchronize, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    uses: ./.github/workflows/verification.yml

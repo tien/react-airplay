@@ -1,0 +1,14 @@
+name: Verification
+
+on: [workflow_call, workflow_dispatch]
+
+jobs:
+  verify:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: yarn typescript
+      - run: yarn lint
+      - run: yarn build
