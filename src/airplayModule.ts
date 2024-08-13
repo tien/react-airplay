@@ -1,9 +1,9 @@
 import {
   NativeEventEmitter,
-  NativeModule,
+  type NativeModule,
   NativeModules,
   Platform,
-} from 'react-native';
+} from "react-native";
 
 export type ExternalPlaybackAvailabilityContext = NativeModule & {
   fetchExternalPlaybackAvailability: () => Promise<boolean>;
@@ -11,26 +11,26 @@ export type ExternalPlaybackAvailabilityContext = NativeModule & {
 
 /* As per https://developer.apple.com/documentation/avfaudio/avaudiosession/port */
 export type AvAudioSessionPortType =
-  | 'BuiltInMic'
-  | 'HeadsetMic'
-  | 'LineIn'
-  | 'AirPlay'
-  | 'BluetoothA2DP'
-  | 'BluetoothLE'
-  | 'BuiltInReceiver'
-  | 'BuiltInSpeaker'
-  | 'HDMI'
-  | 'Headphones'
-  | 'LineOut'
-  | 'AVB'
-  | 'BluetoothHFP'
-  | 'DisplayPort'
-  | 'CarAudio'
-  | 'FireWire'
-  | 'PCI'
-  | 'Thunderbolt'
-  | 'UsbAudio'
-  | 'Virtual';
+  | "BuiltInMic"
+  | "HeadsetMic"
+  | "LineIn"
+  | "AirPlay"
+  | "BluetoothA2DP"
+  | "BluetoothLE"
+  | "BuiltInReceiver"
+  | "BuiltInSpeaker"
+  | "HDMI"
+  | "Headphones"
+  | "LineOut"
+  | "AVB"
+  | "BluetoothHFP"
+  | "DisplayPort"
+  | "CarAudio"
+  | "FireWire"
+  | "PCI"
+  | "Thunderbolt"
+  | "UsbAudio"
+  | "Virtual";
 
 export interface AvAudioSessionChannel {
   channelName: string;
@@ -66,7 +66,7 @@ const {
   RAExternalPlaybackAvailabilityContext,
   RARoutePickerContext,
 } = NativeModules as {
-  RAEvents?: {getConstants: () => Record<string, string>};
+  RAEvents?: { getConstants: () => Record<string, string> };
   RAAirplayConnectivityContext?: AirplayConnectivityContext;
   RAExternalPlaybackAvailabilityContext?: ExternalPlaybackAvailabilityContext;
   RARoutePickerContext?: RoutePickerContext;
@@ -95,7 +95,7 @@ export const onExternalPlaybackAvailabilityChanged = (
   callback: (availability: boolean) => void,
 ) =>
   ExternalPlaybackAvailabilityEventEmitter.addListener(
-    EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,
+    EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED!,
     callback,
   );
 
@@ -103,13 +103,13 @@ export const onAvAudioSessionRoutesChanged = (
   callback: (routes: AvAudioSessionRoute[]) => void,
 ) =>
   AirplayConnectivityEventEmitter.addListener(
-    AV_AUDIO_SESSION_ROUTES_CHANGED,
+    AV_AUDIO_SESSION_ROUTES_CHANGED!,
     callback,
   );
 
 export const showRoutePicker = (options: ShowRoutePickerOptions) => {
-  if (Platform.OS !== 'ios' && RARoutePickerContext === undefined) {
-    console.warn('showRoutePicker is only supported on iOS');
+  if (Platform.OS !== "ios" && RARoutePickerContext === undefined) {
+    console.warn("showRoutePicker is only supported on iOS");
   }
 
   return RARoutePickerContext?.showRoutePicker(options) ?? Promise.resolve();

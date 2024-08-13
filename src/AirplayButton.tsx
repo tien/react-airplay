@@ -1,12 +1,11 @@
-import React from 'react';
 import {
-  ColorValue,
+  type ColorValue,
   processColor,
-  ProcessedColorValue,
+  type ProcessedColorValue,
   requireNativeComponent,
-  ViewProps,
-  ViewPropsIOS,
-} from 'react-native';
+  type ViewProps,
+  type ViewPropsIOS,
+} from "react-native";
 
 type NativeAirplayButtonProps = ViewPropsIOS &
   ViewProps & {
@@ -17,14 +16,14 @@ type NativeAirplayButtonProps = ViewPropsIOS &
 
 export type AirplayButtonProps = Omit<
   NativeAirplayButtonProps,
-  'tintColor' | 'activeTintColor'
+  "tintColor" | "activeTintColor"
 > & {
   tintColor?: number | ColorValue;
   activeTintColor?: number | ColorValue;
 };
 
 const RAAirplayButton = requireNativeComponent<NativeAirplayButtonProps>(
-  'RAAirplayButtonView',
+  "RAAirplayButtonView",
 );
 
 export const AirplayButton = ({

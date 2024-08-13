@@ -1,7 +1,7 @@
 export default {
-  preset: 'react-native',
+  preset: "react-native",
   modulePathIgnorePatterns: [
-    '<rootDir>/example/node_modules',
-    '<rootDir>/lib/',
+    "<rootDir>/example/node_modules",
+    "<rootDir>/lib/",
   ],
 };

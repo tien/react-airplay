@@ -1,12 +1,12 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 
 import {
   AirplayConnectivityContext,
-  AvAudioSessionRoute,
+  type AvAudioSessionRoute,
   ExternalPlaybackAvailabilityContext,
   onAvAudioSessionRoutesChanged,
   onExternalPlaybackAvailabilityChanged,
-} from './airplayModule';
+} from "./airplayModule";
 
 export type UseExternalPlaybackAvailabilityOptions = {
   useCachedValue?: boolean;
@@ -30,7 +30,7 @@ export const useExternalPlaybackAvailability = (
     );
 
     return subscription.remove.bind(subscription);
-  }, [options?.useCachedValue ?? false]);
+  }, [options?.useCachedValue]);
 
   return isExternalPlaybackAvailable;
 };
@@ -42,7 +42,7 @@ export const useAirplayConnectivity = () => {
 
 export const useAirplayRoutes = () => {
   const routes = useAvAudioSessionRoutes();
-  return routes.filter(route => route.portType === 'AirPlay');
+  return routes.filter((route) => route.portType === "AirPlay");
 };
 
 export const useAvAudioSessionRoutes = () => {

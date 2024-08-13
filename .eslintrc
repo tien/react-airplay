@@ -1,7 +1,7 @@
 {
   "root": true,
-  "extends": ["@react-native-community", "prettier"],
+  "extends": ["@react-native", "prettier"],
   "rules": {
-    "react-hooks/exhaustive-deps": "off"
-  }
+    "react/react-in-jsx-scope": "off",
+  },
 }
