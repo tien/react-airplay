@@ -10,7 +10,7 @@
   "workspaces": [
     "example"
   ],
-  "source": "./src/index.tsx",
+  "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
   "exports": {
