@@ -59,7 +59,7 @@ const App = () => {
 
 ### Note
 
-Enabling route detection increase power consumption, as per [Apple documentation](https://developer.apple.com/documentation/avfoundation/avroutedetector/2915762-isroutedetectionenabled). So be sure to un-mount the component when not in use, if that's not possible (e.g. when component is part of a `react-navigation` screen) the `useCachedValue` option parameter can be used:
+Enabling route detection increase power consumption, as per [Apple documentation](https://developer.apple.com/documentation/avfoundation/avroutedetector/2915762-isroutedetectionenabled). So be sure to un-mount the component when not in use, if that's not possible (e.g. when component is part of a `react-navigation` screen) the `enabled` option parameter can be used:
 
 ```typescript
 import { useIsFocused } from "@react-navigation/native";
@@ -68,7 +68,7 @@ import { useExternalPlaybackAvailability } from "react-airplay";
 const isScreenFocused = useIsFocused();
 
 const isExternalPlaybackAvailable = useExternalPlaybackAvailability({
-  useCachedValue: !isScreenFocused,
+  enabled: isScreenFocused,
 });
 ```
 

@@ -9,17 +9,22 @@ import {
 } from "./airplayModule";
 
 export type UseExternalPlaybackAvailabilityOptions = {
+  enabled?: boolean;
+  /**
+   * @deprecated use {@link UseExternalPlaybackAvailabilityOptions.enabled} instead
+   */
   useCachedValue?: boolean;
 };
 
-export const useExternalPlaybackAvailability = (
-  options?: UseExternalPlaybackAvailabilityOptions,
-) => {
+export const useExternalPlaybackAvailability = ({
+  enabled = true,
+  useCachedValue,
+}: UseExternalPlaybackAvailabilityOptions = {}) => {
   const [isExternalPlaybackAvailable, setIsExternalPlaybackAvailable] =
     useState(false);
 
   useEffect(() => {
-    if (options?.useCachedValue ?? false) return;
+    if (useCachedValue ?? !enabled) return;
 
     const subscription = onExternalPlaybackAvailabilityChanged(
       setIsExternalPlaybackAvailable,
@@ -30,7 +35,7 @@ export const useExternalPlaybackAvailability = (
     );
 
     return subscription.remove.bind(subscription);
-  }, [options?.useCachedValue]);
+  }, [enabled, useCachedValue]);
 
   return isExternalPlaybackAvailable;
 };
