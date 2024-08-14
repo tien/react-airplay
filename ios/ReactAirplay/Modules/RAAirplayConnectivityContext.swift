@@ -36,27 +36,30 @@ class RAAirplayConnectivityContext: RAEventEmitter {
     resolve(getAVAudioSessionRoutes())
   }
 
-    private func getAVAudioSessionRoutes() -> [[String: Any]] {
+  private func getAVAudioSessionRoutes() -> [[String: Any]] {
     let session = AVAudioSession.sharedInstance()
-    let routes = session.currentRoute.outputs.map { route in [
-      "portName": route.portName,
-      "portType": route.portType,
-      "channels": route.channels?.map { channel in [
-        "channelName": channel.channelName,
-        "channelNumber": channel.channelNumber,
-        "owningPortUID": channel.owningPortUID,
-        "channelLabel": channel.channelLabel,
+    let routes = session.currentRoute.outputs.map { route in
+      [
+        "portName": route.portName,
+        "portType": route.portType,
+        "channels": route.channels?.map { channel in
+          [
+            "channelName": channel.channelName,
+            "channelNumber": channel.channelNumber,
+            "owningPortUID": channel.owningPortUID,
+            "channelLabel": channel.channelLabel,
+          ]
+        },
+        "uid": route.uid,
+        "hasHardwareVoiceCallProcessing": route.hasHardwareVoiceCallProcessing,
       ]
-      },
-      "uid": route.uid,
-      "hasHardwareVoiceCallProcessing": route.hasHardwareVoiceCallProcessing,
-    ]
     }
 
     return routes
   }
 
   @objc private func handleRouteChange() {
-    sendEvent(withName: RAEvent.avAudioSessionRoutesChanged.rawValue, body: getAVAudioSessionRoutes())
+    sendEvent(
+      withName: RAEvent.avAudioSessionRoutesChanged.rawValue, body: getAVAudioSessionRoutes())
   }
 }
