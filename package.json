@@ -80,7 +80,7 @@
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@react-native-community/eslint-config": "^3.2.0",
-    "@react-native/eslint-config": "^0.74.87",
+    "@react-native/eslint-config": "^0.75.1",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.3.3",
     "@types/react-native": "0.73.0",
