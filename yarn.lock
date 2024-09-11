@@ -3840,34 +3840,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native/eslint-config@npm:^0.74.87":
-  version: 0.74.87
-  resolution: "@react-native/eslint-config@npm:0.74.87"
+"@react-native/eslint-config@npm:^0.75.3":
+  version: 0.75.3
+  resolution: "@react-native/eslint-config@npm:0.75.3"
   dependencies:
     "@babel/core": "npm:^7.20.0"
     "@babel/eslint-parser": "npm:^7.20.0"
-    "@react-native/eslint-plugin": "npm:0.74.87"
+    "@react-native/eslint-plugin": "npm:0.75.3"
     "@typescript-eslint/eslint-plugin": "npm:^7.1.1"
     "@typescript-eslint/parser": "npm:^7.1.1"
     eslint-config-prettier: "npm:^8.5.0"
     eslint-plugin-eslint-comments: "npm:^3.2.0"
     eslint-plugin-ft-flow: "npm:^2.0.1"
     eslint-plugin-jest: "npm:^27.9.0"
-    eslint-plugin-prettier: "npm:^4.2.1"
     eslint-plugin-react: "npm:^7.30.1"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-native: "npm:^4.0.0"
   peerDependencies:
     eslint: ">=8"
     prettier: ">=2"
-  checksum: 10c0/d6931c8f7334f7ba24e1a1ba3c2ff7cac8ef710cd4b58ac5b929c7943da3c6a4786511af6af91e98388340a98db554356ced5a64b4b28e9102990e8436d96227
+  checksum: 10c0/5034e26f94a0a4b63c8e2868c0b27be7ce067fb4b2edd9c2eb504b9f81bffd3b0083f629297fd3e5d47e7facccb9aec1f7913b0177917d2be0e56c07c1eb0829
   languageName: node
   linkType: hard
 
-"@react-native/eslint-plugin@npm:0.74.87":
-  version: 0.74.87
-  resolution: "@react-native/eslint-plugin@npm:0.74.87"
-  checksum: 10c0/590a3277dff82e7770bc52f040dd2f126b37d48ca791097096a0c7e0688f46b776dbe9ccd3ecd57d7e6085117233b426ba9d90eb285144f03d74e3898699b441
+"@react-native/eslint-plugin@npm:0.75.3":
+  version: 0.75.3
+  resolution: "@react-native/eslint-plugin@npm:0.75.3"
+  checksum: 10c0/2d8b98bccd06ad9d645efe030a5dda47503c77b53967670deff2bfc8a28ba515a59adc8573897a6d0ec19487f60191cd2efe01296cc536fdcd740bb9f2763654
   languageName: node
   linkType: hard
 
@@ -10834,7 +10833,7 @@ __metadata:
     "@commitlint/cli": "npm:^19.4.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@react-native-community/eslint-config": "npm:^3.2.0"
-    "@react-native/eslint-config": "npm:^0.74.87"
+    "@react-native/eslint-config": "npm:^0.75.3"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.3"
     "@types/react-native": "npm:0.73.0"
