@@ -1,6 +1,7 @@
 # react-airplay
 
 [![npm](https://img.shields.io/npm/v/react-airplay)](https://www.npmjs.com/package/react-airplay)
+![NPM Downloads](https://img.shields.io/npm/dw/react-airplay)
 
 Airplay bridge for React Native.
 
@@ -26,10 +27,10 @@ import {
   useAirplayConnectivity,
   useExternalPlaybackAvailability,
   useAvAudioSessionRoutes,
-} from 'react-airplay';
-import {Button, Text} from 'react-native'
+} from "react-airplay";
+import { Button, Text} from "react-native"
 
-const App = () => {
+export function App() {
   const isAirplayConnected = useAirplayConnectivity();
   const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
   const routes = useAvAudioSessionRoutes();
@@ -38,9 +39,9 @@ const App = () => {
     <View>
       {isExternalPlaybackAvailable && (
         <AirplayButton
-          prioritizesVideoDevices={true}
-          tintColor={'red'}
-          activeTintColor={'blue'}
+          prioritizesVideoDevices
+          tintColor="red"
+          activeTintColor="blue"
           style={{
             width: 24,
             height: 24,
@@ -50,7 +51,7 @@ const App = () => {
         <Button title="Custom Button" onPress={() => showRoutePicker({prioritizesVideoDevices: true})}/>
       )}
       {routes.length && (
-        <Text>Currently playing on {routes.map((route) => route.portName).join(', ')}</Text>
+        <Text>Currently playing on {routes.map((route) => route.portName).join(", "")}</Text>
       )}
     </View>
   );
