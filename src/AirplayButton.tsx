@@ -2,10 +2,10 @@ import {
   type ColorValue,
   processColor,
   type ProcessedColorValue,
-  requireNativeComponent,
   type ViewProps,
   type ViewPropsIOS,
 } from "react-native";
+import NativeRAAirplayButtonView from "./NativeRAAirplayButtonView";
 
 type NativeAirplayButtonProps = ViewPropsIOS &
   ViewProps & {
@@ -22,16 +22,12 @@ export type AirplayButtonProps = Omit<
   activeTintColor?: number | ColorValue;
 };
 
-const RAAirplayButton = requireNativeComponent<NativeAirplayButtonProps>(
-  "RAAirplayButtonView",
-);
-
 export const AirplayButton = ({
   tintColor,
   activeTintColor,
   ...props
 }: AirplayButtonProps) => (
-  <RAAirplayButton
+  <NativeRAAirplayButtonView
     {...props}
     tintColor={processColor(tintColor)}
     activeTintColor={processColor(activeTintColor)}

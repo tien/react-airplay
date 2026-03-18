@@ -39,20 +39,27 @@ class RAAirplayConnectivityContext: RAEventEmitter {
   private func getAVAudioSessionRoutes() -> [[String: Any]] {
     let session = AVAudioSession.sharedInstance()
     let routes = session.currentRoute.outputs.map { route in
-      [
+      var entry: [String: Any] = [
         "portName": route.portName,
-        "portType": route.portType,
+        "portType": route.portType.rawValue,
         "channels": route.channels?.map { channel in
           [
             "channelName": channel.channelName,
             "channelNumber": channel.channelNumber,
             "owningPortUID": channel.owningPortUID,
-            "channelLabel": channel.channelLabel,
+            "channelLabel": "\(channel.channelLabel)",
           ]
-        },
+        } as Any,
         "uid": route.uid,
         "hasHardwareVoiceCallProcessing": route.hasHardwareVoiceCallProcessing,
+        "isSpatialAudioEnabled": false,
       ]
+
+      if #available(iOS 15.0, *) {
+        entry["isSpatialAudioEnabled"] = route.isSpatialAudioEnabled
+      }
+
+      return entry
     }
 
     return routes
