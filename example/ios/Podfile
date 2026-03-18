@@ -6,4 +6,8 @@ require "#{ws_dir}/node_modules/react-native-test-app/test_app.rb"
 
 workspace 'ReactAirplayExample.xcworkspace'
 
-use_test_app!
+use_test_app!({
+  :fabric_enabled => true,
+  :turbomodule_enabled => true,
+  :bridgeless_enabled => false,
+})

@@ -1,39 +1,23 @@
-import {
-  type ColorValue,
-  processColor,
-  type ProcessedColorValue,
-  requireNativeComponent,
-  type ViewProps,
-  type ViewPropsIOS,
-} from "react-native";
+import { type ColorValue, type ViewProps } from "react-native";
 
-type NativeAirplayButtonProps = ViewPropsIOS &
-  ViewProps & {
-    tintColor?: ProcessedColorValue | null;
-    activeTintColor?: ProcessedColorValue | null;
-    prioritizesVideoDevices?: boolean;
-  };
+import RAAirplayButtonViewNativeComponent from "./specs/RAAirplayButtonViewNativeComponent";
 
-export type AirplayButtonProps = Omit<
-  NativeAirplayButtonProps,
-  "tintColor" | "activeTintColor"
-> & {
-  tintColor?: number | ColorValue;
-  activeTintColor?: number | ColorValue;
+export type AirplayButtonProps = ViewProps & {
+  tintColor?: ColorValue;
+  activeTintColor?: ColorValue;
+  prioritizesVideoDevices?: boolean;
 };
-
-const RAAirplayButton = requireNativeComponent<NativeAirplayButtonProps>(
-  "RAAirplayButtonView",
-);
 
 export const AirplayButton = ({
   tintColor,
   activeTintColor,
+  prioritizesVideoDevices,
   ...props
 }: AirplayButtonProps) => (
-  <RAAirplayButton
+  <RAAirplayButtonViewNativeComponent
     {...props}
-    tintColor={processColor(tintColor)}
-    activeTintColor={processColor(activeTintColor)}
+    tintColor={tintColor}
+    activeTintColor={activeTintColor}
+    prioritizesVideoDevices={prioritizesVideoDevices}
   />
 );

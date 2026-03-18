@@ -25,13 +25,6 @@ export default () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Video
-        source={{
-          uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        }}
-        style={styles.video}
-        controls={true}
-      />
       <View>
         <Text>
           External playback available: {String(isExternalPlaybackAvailable)}
@@ -49,6 +42,13 @@ export default () => {
           />
         )}
       </View>
+      <Video
+        source={{
+          uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        }}
+        style={styles.video}
+        controls={true}
+      />
       <View>
         <Button
           title="Custom Button"
