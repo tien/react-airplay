@@ -32,7 +32,7 @@ export type AvAudioSessionChannel = {
   channelName: string;
   channelNumber: number;
   owningPortUID: string;
-  channelLabel: string;
+  channelLabel: number;
 };
 
 export type AvAudioSessionRoute = {
