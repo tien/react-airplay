@@ -6,6 +6,7 @@ runs:
   using: composite
   steps:
     - uses: volta-cli/action@v4
+
     - run: yarn install --immutable
       shell: bash
 
@@ -13,10 +14,13 @@ runs:
       with:
         bundler-cache: true
 
-    - run: bundle exec pod install
+    - run: brew install clang-format
+      shell: bash
+
+    - run: bundle install && bundle exec pod install
       working-directory: ios
       shell: bash
 
-    - run: bundle exec pod install
+    - run: bundle install && bundle exec pod install
       working-directory: example/ios
       shell: bash

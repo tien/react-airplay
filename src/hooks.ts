@@ -1,41 +1,30 @@
 import { useEffect, useState } from "react";
 
 import {
-  AirplayConnectivityContext,
-  type AvAudioSessionRoute,
-  ExternalPlaybackAvailabilityContext,
+  getAvAudioSessionRoutes,
+  getExternalPlaybackAvailability,
   onAvAudioSessionRoutesChanged,
   onExternalPlaybackAvailabilityChanged,
 } from "./airplayModule";
+import type { AvAudioSessionRoute } from "./specs/NativeAirplay";
 
 export type UseExternalPlaybackAvailabilityOptions = {
   enabled?: boolean;
-  /**
-   * @deprecated use {@link UseExternalPlaybackAvailabilityOptions.enabled} instead
-   */
-  useCachedValue?: boolean;
 };
 
 export const useExternalPlaybackAvailability = ({
   enabled = true,
-  useCachedValue,
 }: UseExternalPlaybackAvailabilityOptions = {}) => {
   const [isExternalPlaybackAvailable, setIsExternalPlaybackAvailable] =
-    useState(false);
+    useState(() => getExternalPlaybackAvailability());
 
   useEffect(() => {
-    if (useCachedValue ?? !enabled) return;
+    if (!enabled) return;
 
-    const subscription = onExternalPlaybackAvailabilityChanged(
+    return onExternalPlaybackAvailabilityChanged(
       setIsExternalPlaybackAvailable,
     );
-
-    ExternalPlaybackAvailabilityContext?.fetchExternalPlaybackAvailability().then(
-      setIsExternalPlaybackAvailable,
-    );
-
-    return subscription.remove.bind(subscription);
-  }, [enabled, useCachedValue]);
+  }, [enabled]);
 
   return isExternalPlaybackAvailable;
 };
@@ -51,15 +40,11 @@ export const useAirplayRoutes = () => {
 };
 
 export const useAvAudioSessionRoutes = () => {
-  const [routes, setRoutes] = useState<AvAudioSessionRoute[]>([]);
+  const [routes, setRoutes] = useState<AvAudioSessionRoute[]>(() =>
+    getAvAudioSessionRoutes(),
+  );
 
-  useEffect(() => {
-    const subscription = onAvAudioSessionRoutesChanged(setRoutes);
-
-    AirplayConnectivityContext?.fetchAvAudioSessionRoutes().then(setRoutes);
-
-    return subscription.remove.bind(subscription);
-  }, []);
+  useEffect(() => onAvAudioSessionRoutesChanged(setRoutes), []);
 
   return routes;
 };

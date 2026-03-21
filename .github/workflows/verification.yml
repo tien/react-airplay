@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: yarn typescript
+      - run: yarn typecheck
       - run: yarn lint
+      - run: yarn format:check
       - run: yarn build
