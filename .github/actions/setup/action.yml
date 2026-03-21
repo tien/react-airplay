@@ -14,7 +14,7 @@ runs:
       with:
         bundler-cache: true
 
-    - run: sudo apt-get install -y clang-format
+    - run: sudo apt install -y clang-format
       shell: bash
 
     - run: bundle install && bundle exec pod install
