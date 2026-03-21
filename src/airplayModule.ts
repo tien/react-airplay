@@ -1,78 +1,46 @@
-import { NativeEventEmitter, Platform } from "react-native";
-import NativeRAAirplayConnectivityContext from "./NativeRAAirplayConnectivityContext";
-import NativeRAExternalPlaybackAvailabilityContext from "./NativeRAExternalPlaybackAvailabilityContext";
-import NativeRARoutePickerContext from "./NativeRARoutePickerContext";
-
+import NativeAirplay from "./specs/NativeAirplay";
 export type {
   AvAudioSessionChannel,
+  AvAudioSessionPortType,
   AvAudioSessionRoute,
-} from "./NativeRAAirplayConnectivityContext";
-export type { ShowRoutePickerOptions } from "./NativeRARoutePickerContext";
+  ShowRoutePickerOptions,
+} from "./specs/NativeAirplay";
 
-/* As per https://developer.apple.com/documentation/avfaudio/avaudiosession/port */
-export type AvAudioSessionPortType =
-  | "BuiltInMic"
-  | "HeadsetMic"
-  | "LineIn"
-  | "AirPlay"
-  | "BluetoothA2DP"
-  | "BluetoothLE"
-  | "BuiltInReceiver"
-  | "BuiltInSpeaker"
-  | "HDMI"
-  | "Headphones"
-  | "LineOut"
-  | "AVB"
-  | "BluetoothHFP"
-  | "DisplayPort"
-  | "CarAudio"
-  | "FireWire"
-  | "PCI"
-  | "Thunderbolt"
-  | "UsbAudio"
-  | "Virtual";
+export const getExternalPlaybackAvailability =
+  NativeAirplay.getExternalPlaybackAvailability.bind(NativeAirplay);
 
-export const EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED =
-  "externalPlaybackAvailabilityChanged";
-export const AV_AUDIO_SESSION_ROUTES_CHANGED = "avAudioSessionRoutesChanged";
-
-export const AirplayConnectivityContext = NativeRAAirplayConnectivityContext;
-export const ExternalPlaybackAvailabilityContext =
-  NativeRAExternalPlaybackAvailabilityContext;
-
-export const ExternalPlaybackAvailabilityEventEmitter = new NativeEventEmitter(
-  NativeRAExternalPlaybackAvailabilityContext ?? undefined,
-);
-
-export const AirplayConnectivityEventEmitter = new NativeEventEmitter(
-  NativeRAAirplayConnectivityContext ?? undefined,
-);
-
-export const onExternalPlaybackAvailabilityChanged = (
-  callback: (availability: boolean) => void,
-) =>
-  ExternalPlaybackAvailabilityEventEmitter.addListener(
-    EXTERNAL_PLAYBACK_AVAILABILITY_CHANGED,
-    callback,
+export function onExternalPlaybackAvailabilityChanged(
+  ...args: Parameters<
+    typeof NativeAirplay.onExternalPlaybackAvailabilityChanged
+  >
+) {
+  const eventSubscription = NativeAirplay.onExternalPlaybackAvailabilityChanged(
+    ...args,
   );
+  NativeAirplay.increaseExternalPlaybackAvailabilityListeners();
 
-export const onAvAudioSessionRoutesChanged = (
-  callback: (
-    routes: import("./NativeRAAirplayConnectivityContext").AvAudioSessionRoute[],
-  ) => void,
-) =>
-  AirplayConnectivityEventEmitter.addListener(
-    AV_AUDIO_SESSION_ROUTES_CHANGED,
-    callback,
+  return () => {
+    eventSubscription.remove();
+    NativeAirplay.decreaseExternalPlaybackAvailabilityListeners();
+  };
+}
+
+export const getAvAudioSessionRoutes =
+  NativeAirplay.getAvAudioSessionRoutes.bind(NativeAirplay);
+
+export function onAvAudioSessionRoutesChanged(
+  ...args: Parameters<typeof NativeAirplay.onAvAudioSessionRoutesChanged>
+) {
+  const eventSubscription = NativeAirplay.onAvAudioSessionRoutesChanged(
+    ...args,
   );
+  NativeAirplay.increaseAvAudioSessionRoutesListeners();
 
-export const showRoutePicker = (
-  options: import("./NativeRARoutePickerContext").ShowRoutePickerOptions,
-) => {
-  if (Platform.OS !== "ios" || NativeRARoutePickerContext === null) {
-    console.warn("showRoutePicker is only supported on iOS");
-    return Promise.resolve();
-  }
+  return () => {
+    eventSubscription.remove();
+    NativeAirplay.decreaseAvAudioSessionRoutesListeners();
+  };
+}
 
-  return NativeRARoutePickerContext.showRoutePicker(options ?? null);
-};
+export const showRoutePicker =
+  NativeAirplay.showRoutePicker.bind(NativeAirplay);

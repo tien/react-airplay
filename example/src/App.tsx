@@ -21,7 +21,7 @@ export default () => {
     useCachedValue: false,
   });
   const isAirplayConnected = useAirplayConnectivity();
-  const routes = useAvAudioSessionRoutes();
+  const avAudioSessionRoutes = useAvAudioSessionRoutes();
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -30,22 +30,22 @@ export default () => {
           uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
         }}
         style={styles.video}
-        controls={true}
+        controls
       />
       <View>
         <Text>
           External playback available: {String(isExternalPlaybackAvailable)}
         </Text>
         <Text>Airplay connected: {String(isAirplayConnected)}</Text>
-        <Text>Routes: {JSON.stringify(routes)}</Text>
+        <Text>Routes: {JSON.stringify(avAudioSessionRoutes)}</Text>
       </View>
       <View style={styles.box}>
         {Platform.OS === "ios" && (
           <AirplayButton
             style={styles.button}
-            prioritizesVideoDevices={true}
             tintColor="yellow"
             activeTintColor="red"
+            prioritizesVideoDevices
           />
         )}
       </View>
