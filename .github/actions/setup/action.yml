@@ -6,12 +6,16 @@ runs:
   using: composite
   steps:
     - uses: volta-cli/action@v4
+
     - run: yarn install --immutable
       shell: bash
 
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
+
+    - run: sudo apt-get install -y clang-format
+      shell: bash
 
     - run: bundle install && bundle exec pod install
       working-directory: ios
