@@ -1785,7 +1785,6 @@ PODS:
     - React-utils (= 0.84.1)
     - ReactNativeDependencies
   - ReactNativeDependencies (0.84.1)
-  - SwiftLint (0.63.2)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1862,12 +1861,7 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios/ReactCodegen`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeDependencies (from `../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`)
-  - SwiftLint
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
-
-SPEC REPOS:
-  trunk:
-    - SwiftLint
 
 EXTERNAL SOURCES:
   FBLazyVector:
@@ -2091,9 +2085,8 @@ SPEC CHECKSUMS:
   ReactCodegen: a96830ce4b57b3e23989c41bc9505913cca268b4
   ReactCommon: 309419492d417c4cbb87af06f67735afa40ecb9d
   ReactNativeDependencies: d44f5253a27b3a9702aaed3870825410a49ae891
-  SwiftLint: 4fa4a9b437ccc4fc72f6c0bc98556e8e9e05bccf
   Yoga: c0b3f2c7e8d3e327e450223a2414ca3fa296b9a2
 
-PODFILE CHECKSUM: 25310cc95f13d33c804a4309cd7ba4c43289a0bd
+PODFILE CHECKSUM: 0f9b575c44c89552784c618b2326a90d4c28851a
 
 COCOAPODS: 1.15.2
