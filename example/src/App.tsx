@@ -17,9 +17,7 @@ import {
 import Video from "react-native-video";
 
 export default () => {
-  const isExternalPlaybackAvailable = useExternalPlaybackAvailability({
-    useCachedValue: false,
-  });
+  const isExternalPlaybackAvailable = useExternalPlaybackAvailability();
   const isAirplayConnected = useAirplayConnectivity();
   const avAudioSessionRoutes = useAvAudioSessionRoutes();
 
