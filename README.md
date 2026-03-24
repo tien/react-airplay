@@ -22,7 +22,7 @@ import {
   useExternalPlaybackAvailability,
   useAvAudioSessionRoutes,
 } from "react-airplay";
-import { Button, Text} from "react-native"
+import { Button, Text, View } from "react-native";
 
 export function App() {
   const isAirplayConnected = useAirplayConnectivity();
@@ -32,24 +32,31 @@ export function App() {
   return (
     <View>
       {isExternalPlaybackAvailable && (
-        <AirplayButton
-          prioritizesVideoDevices
-          tintColor="red"
-          activeTintColor="blue"
-          style={{
-            width: 24,
-            height: 24,
-          }}
-        />
-
-        <Button title="Custom Button" onPress={() => showRoutePicker({prioritizesVideoDevices: true})}/>
+        <>
+          <AirplayButton
+            prioritizesVideoDevices
+            tintColor="red"
+            activeTintColor="blue"
+            style={{
+              width: 24,
+              height: 24,
+            }}
+          />
+          <Button
+            title="Custom Button"
+            onPress={() => showRoutePicker({ prioritizesVideoDevices: true })}
+          />
+        </>
       )}
-      {routes.length && (
-        <Text>Currently playing on {routes.map((route) => route.portName).join(", "")}</Text>
+      {routes.length > 0 && (
+        <Text>
+          Currently playing on{" "}
+          {routes.map((route) => route.portName).join(", ")}
+        </Text>
       )}
     </View>
   );
-};
+}
 ```
 
 ### Note
