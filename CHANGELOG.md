@@ -1,5 +1,11 @@
 # react-airplay
 
+## 2.0.1
+
+### Patch Changes
+
+- [#282](https://github.com/tien/react-airplay/pull/282) [`e3a5aa1`](https://github.com/tien/react-airplay/commit/e3a5aa13588179eb341895134b75e304d0deed4d) Thanks [@tien](https://github.com/tien)! - Fixed Yarn postinstall bug.
+
 ## 2.0.0
 
 ### Major Changes
