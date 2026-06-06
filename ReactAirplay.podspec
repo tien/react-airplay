@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/ReactAirplay/**/*.{h,m,mm}"
   s.private_header_files = "ios/ReactAirplay/**/*.h"
+  s.frameworks = "AVKit"
 
   install_modules_dependencies(s)
 end
