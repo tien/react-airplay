@@ -51,7 +51,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\" && clang-format -i ios/ReactAirplay/**/*.{h,mm}",
     "format:check": "prettier --check \"**/*.{js,ts,tsx,json,md}\" && clang-format --dry-run -Werror ios/ReactAirplay/**/*.{h,mm}",
-    "publish:packages": "yarn build && yarn workspaces foreach -Apt --no-private npm publish --access public --tolerate-republish && yarn changeset tag"
+    "publish:packages": "yarn build && yarn changeset publish"
   },
   "keywords": [
     "react-native",
