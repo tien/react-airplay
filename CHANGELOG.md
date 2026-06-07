@@ -1,5 +1,11 @@
 # react-airplay
 
+## 2.0.2
+
+### Patch Changes
+
+- [#285](https://github.com/tien/react-airplay/pull/285) [`ce8cfe7`](https://github.com/tien/react-airplay/commit/ce8cfe7bdebfd3330904b625c0855d3ddc80cbb0) Thanks [@luoxuhai](https://github.com/luoxuhai)! - Linked the AVKit framework in the podspec to fix `_OBJC_CLASS_$_AVRoutePickerView` link errors in apps that don't otherwise pull in AVKit.
+
 ## 2.0.1
 
 ### Patch Changes
